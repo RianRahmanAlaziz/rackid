@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -27,12 +29,13 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
     Route::resources([
         'product'      => ProductController::class,
         'category'     => CategoryController::class,
-        // 'file-manager' => FileManagerController::class,
+        'gallery'      => GalleryController::class,
+        'banner'      => BannerController::class,
         // 'info'         => InfoController::class,
         // 'clients'      => ClientsController::class,
         // 'contact'      => ContactController::class,
         // 'whychoose'    => WhychooseController::class,
         // 'aboutus'      => AboutusController::class,
-        // 'banners'      => BannerController::class, // ✅ konsisten pakai plural
+        // ✅ konsisten pakai plural
     ]);
 });
