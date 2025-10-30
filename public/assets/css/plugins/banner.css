@@ -1,0 +1,204 @@
+.mySwiper-banner-two {
+    position: relative;
+}
+
+.mySwiper-banner-two .swiper-button-next,
+.mySwiper-banner-two .swiper-button-prev {
+    height: 40px;
+    width: 400px;
+    border-radius: 50%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .3s;
+}
+
+@media (max-width: 767px) {
+
+    .mySwiper-banner-two .swiper-button-next,
+    .mySwiper-banner-two .swiper-button-prev {
+        display: none;
+    }
+}
+
+.mySwiper-banner-two .swiper-button-next i,
+.mySwiper-banner-two .swiper-button-prev i {
+    font-size: 25px;
+    transition: .3s;
+    color: #1C2539;
+}
+
+.mySwiper-banner-two .swiper-button-next::after,
+.mySwiper-banner-two .swiper-button-prev::after {
+    display: none;
+}
+
+.mySwiper-banner-two .swiper-button-next:hover,
+.mySwiper-banner-two .swiper-button-prev:hover {
+    background: linear-gradient(to top, rgb(193, 18, 28), rgb(255, 67, 67)) !important;
+    transform: scale(1.1);
+}
+
+.mySwiper-banner-two .swiper-button-next:hover i,
+.mySwiper-banner-two .swiper-button-prev:hover i {
+    color: #fff;
+}
+
+.mySwiper-banner-two .swiper-button-next {
+    right: 120px;
+}
+
+.mySwiper-banner-two .swiper-button-prev {
+    left: 120px;
+}
+
+/* Banner animation part */
+.banner-swiper-two .swiper-slide-active .pre-title {
+    animation: fadeInUp 1s;
+    animation-delay: 0s;
+    display: block;
+}
+
+.banner-swiper-two .swiper-slide-active .title {
+    animation: fadeInUp-small 1.5s;
+    animation-delay: 0s;
+}
+
+.banner-swiper-two .swiper-slide-active p.disc {
+    animation: fadeInUp 2.5s;
+    animation-delay: 0s;
+}
+
+.banner-swiper-two .swiper-slide-active .rts-btn {
+    animation: fadeInUp 3s;
+    animation-delay: 0s;
+}
+
+.banner-swiper-two .swiper-slide-active .shape-two {
+    right: 10%;
+}
+
+.banner-swiper-two .swiper-slide-active .shape-three {
+    left: 16%;
+}
+
+.banner-swiper-two .swiper-slide-active .shape-one {
+    right: 0;
+}
+
+.banner-swiper-two .swiper-slide-active .shape-four {
+    left: 0;
+}
+
+
+
+/* Container utama */
+.banner-swiper-two {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Setiap slide wrapper */
+.banner-slide {
+    position: relative;
+    width: 100%;
+    height: 700px;
+    /* default untuk laptop/PC */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Gambar banner utama */
+.banner-main-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    /* isi penuh tapi tetap proporsional */
+    object-position: center;
+}
+
+/* Sedikit efek zoom pelan */
+.swiper-slide-active .banner-main-img {
+    transform: scale(1.05);
+}
+
+/* Responsif */
+@media (min-width: 1400px) {
+    .banner-slide {
+        height: 750px;
+        /* layar besar */
+    }
+}
+
+@media (max-width: 991px) {
+    .banner-slide {
+        height: 500px;
+        /* laptop kecil/tablet */
+    }
+}
+
+@media (max-width: 767px) {
+    .banner-slide {
+        height: 400px;
+        /* HP */
+    }
+}
+
+
+
+/* Tombol navigasi unik */
+.banner-next-btn,
+.banner-prev-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.banner-next-btn:hover,
+.banner-prev-btn:hover {
+    background: rgba(255, 255, 255, 0.8);
+    color: #000;
+}
+
+/* Posisi kanan & kiri */
+.banner-next-btn {
+    right: 30px;
+}
+
+.banner-prev-btn {
+    left: 30px;
+}
+
+/* Responsif (di HP tombol lebih kecil) */
+@media (max-width: 767px) {
+
+    .banner-next-btn,
+    .banner-prev-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .banner-next-btn {
+        right: 15px;
+    }
+
+    .banner-prev-btn {
+        left: 15px;
+    }
+}

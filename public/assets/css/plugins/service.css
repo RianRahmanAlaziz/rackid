@@ -1,0 +1,332 @@
+.single-service-hr .inner .icon-area {
+    height: 85px;
+    width: 85px;
+    margin: auto;
+    background: linear-gradient(to top, rgb(193, 18, 28), rgb(255, 67, 67)) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+}
+
+
+.single-service-hr .inner .icon-area img {
+    width: 40px !important;
+    height: 40px !important;
+    filter: brightness(0) invert(1) !important;
+}
+
+
+.title-area-between-hr {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+@media (max-width: 767px) {
+
+    /* asumsi $large-mobile */
+    .title-area-between-hr {
+        flex-wrap: wrap;
+        gap: 25px;
+    }
+}
+
+.title-area-between-hr .title-area-hr-left .pre {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 20px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+    display: block;
+    margin-bottom: 15px;
+    max-width: max-content;
+}
+
+.title-area-between-hr .title-area-hr-left .title {
+    font-size: 48px;
+    color: #1C2539;
+    margin-bottom: 0;
+}
+
+@media (max-width: 991px) {
+
+    /* asumsi $sm-layout */
+    .title-area-between-hr .title-area-hr-left .title {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    /* asumsi $large-mobile */
+    .title-area-between-hr .title-area-hr-left .title {
+        font-size: 28px;
+    }
+}
+
+.title-area-between-hr .rts-btn {
+    border: 1px solid #999999;
+    color: #1C2539;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.title-area-between-hr .rts-btn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: var(--color-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+    z-index: 0;
+}
+
+.title-area-between-hr .rts-btn:hover::before {
+    transform: scaleX(1);
+}
+
+.title-area-between-hr .rts-btn:hover {
+    color: #fff;
+    z-index: 1;
+}
+
+
+
+.whatsapp-cta {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    z-index: 9999;
+}
+
+.whatsapp-cta a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    color: white;
+    font-size: 32px;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-cta a:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    color: white;
+}
+
+
+
+.product-filter-modern {
+    background: #ffffff;
+    border: 1px solid #e8e8e8;
+    transition: all 0.3s ease;
+}
+
+.product-filter-modern:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.07);
+}
+
+/* Search box */
+.search-box-modern input {
+    border-radius: 50px;
+    border: 1px solid #ddd;
+    padding: 10px 18px;
+    transition: all 0.3s ease;
+}
+
+.search-box-modern input:focus {
+    border-color: rgb(193, 18, 28);
+    box-shadow: 0 0 0 3px rgb(193, 18, 28);
+}
+
+/* Accordion Modern */
+.accordion-modern .accordion-item {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.accordion-modern .accordion-header {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 12px 10px;
+    text-align: left;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.accordion-modern .accordion-header i {
+    margin-right: 8px;
+    color: rgb(193, 18, 28);
+}
+
+.accordion-modern .accordion-header:hover {
+    color: rgb(193, 18, 28);
+}
+
+.accordion-modern .accordion-icon {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Accordion body */
+.accordion-modern .accordion-body {
+    display: none;
+    flex-direction: column;
+    padding-left: 30px;
+    padding-bottom: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+.accordion-modern .accordion-body a {
+    text-decoration: none;
+    color: #555;
+    padding: 4px 0;
+    transition: all 0.2s ease;
+}
+
+.accordion-modern .accordion-body a:hover {
+    color: rgb(193, 18, 28);
+    transform: translateX(3px);
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Active state */
+.accordion-modern .active .accordion-body {
+    display: flex;
+}
+
+.accordion-modern .active .accordion-icon {
+    transform: rotate(45deg);
+}
+
+.single-contact-info {
+    margin-top: -30px;
+    /* jarak atas */
+    margin-bottom: -30px;
+    /* jarak bawah */
+}
+
+.pagination {
+    display: inline-flex !important;
+    gap: 8px !important;
+}
+
+.pagination button {
+    background-color: #f0f0f0 !important;
+    /* Warna default */
+    border: none !important;
+    color: #333 !important;
+    padding: 10px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    font-weight: 500 !important;
+}
+
+/* Warna saat hover */
+.pagination button:hover {
+    background-color: rgb(193, 18, 28) !important;
+    /* Ganti sesuai tema */
+    color: #fff !important;
+}
+
+/* Warna saat aktif */
+.pagination button.active {
+    background-color: rgb(193, 18, 28) !important;
+    /* Warna tombol aktif */
+    color: #fff !important;
+}
+
+/* Icon next (before/after) */
+.pagination button i {
+    font-size: 16px !important;
+    color: #333 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Warna icon saat hover */
+.pagination button:hover i {
+    color: #fff !important;
+}
+
+
+
+.document-card {
+    transition: all 0.3s ease;
+    background-color: #fff;
+}
+
+.document-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.document-card .icon i {
+    color: rgb(193, 18, 28) !important;
+}
+
+.rts-btn.btn-primary {
+    background-color: rgb(193, 18, 28);
+    color: #fff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+.rts-btn.btn-primary:hover {
+    background-color: rgb(193, 18, 28);
+}
+
+
+.filter-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.filter-btn {
+    width: 100%;
+    text-align: left;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: #0056b3;
+    color: #fff;
+    border-color: #0056b3;
+}
