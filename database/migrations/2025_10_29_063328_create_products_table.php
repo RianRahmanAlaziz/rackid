@@ -14,10 +14,16 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('productname');
+            $table->string('productid')->unique();
             $table->string('slug')->unique();
             $table->foreignId('category_id')
                 ->constrained('categories') // Menyebutkan nama tabel secara eksplisit
                 ->onDelete('cascade');
+            $table->text('description');
+            $table->json('gambar')->nullable();
+            $table->json('thumbnail')->nullable();
+            $table->json('url')->nullable();
+            $table->enum('status', ['Inactive', 'Active']);
             $table->timestamps();
         });
     }

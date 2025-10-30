@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('container')
-    <h2 class="intro-y text-lg font-medium mt-24">
+    <h2 class="intro-y text-lg font-medium mt-20">
         Categories
     </h2>
     <div class="grid grid-cols-12 gap-6 mt-5">
