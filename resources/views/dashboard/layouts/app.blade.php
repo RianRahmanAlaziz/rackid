@@ -5,7 +5,7 @@
 
 <head>
     <meta charset="utf-8">
-    <link href="/assets/images/logo.svg" rel="shortcut icon">
+    <link href="/assets/images/logo.png" rel="shortcut icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Dashboard | {{ $title }}</title>
     <!-- BEGIN: CSS Assets-->
