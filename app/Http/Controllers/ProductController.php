@@ -50,19 +50,19 @@ class ProductController extends Controller
     {
         $validatedData = $request->validate([
             'productname'   => 'required',
-            'slug'          => 'required|unique:products',
+            'slug'          => 'nullable|unique:products',
             'category_id'   => 'nullable',
             'gambar'        => 'nullable|array',
             'gambar.*'      => 'image|mimes:jpg,jpeg,png,gif|max:2048',
             'thumbnail'     => 'nullable|array',
             'thumbnail.*'   => 'image|mimes:jpg,jpeg,png,gif|max:2048',
-            'url.*'         => 'nullable|url',
+            'url.*'         => 'sometimes|nullable|url',
             'productid'     => 'nullable|unique:products,productid',
             'description'   => 'nullable|string',
         ]);
-
         $status = $request->has('status') ? 'Active' : 'Inactive';
         $validatedData['status'] = $status;
+
 
         $folderPath = public_path('assets/images/product');
         if (!File::exists($folderPath)) File::makeDirectory($folderPath, 0777, true);

@@ -94,8 +94,8 @@
                                     <li class="main-nav has-dropdown project-a-after">
                                         <a href="#">Media</a>
                                         <ul class="submenu parent-nav">
-                                            <li><a href="/media_foto">Media Foto</a></li>
-                                            <li><a href="/media_video">Media Video</a></li>
+                                            <li><a href="/media-foto">Media Foto</a></li>
+                                            <li><a href="/media-video">Media Video</a></li>
                                         </ul>
                                     </li>
                                     <li class="main-nav">

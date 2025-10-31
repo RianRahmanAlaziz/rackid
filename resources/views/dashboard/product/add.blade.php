@@ -280,8 +280,7 @@
                                     <div class="px-4 pb-4 mt-5 flex items-center justify-center cursor-pointer relative">
                                         <i data-lucide="image" class="w-4 h-4 mr-2"></i>
                                         <span class="text-primary mr-1">Upload images</span> or drag and drop
-                                        <input id="thumbnail" type="file" name="thumbnail[]" multiple
-                                            accept="image/*"
+                                        <input id="thumbnail" type="file" name="thumbnail[]" accept="image/*"
                                             class="thumbnail-input w-full h-full top-0 left-0 absolute opacity-0"
                                             onchange="previewImagethumbnail(event)" value="{{ old('thumbnail') }}">
                                     </div>
@@ -306,8 +305,13 @@
                                     </div>
                                 </label>
                                 <div class="w-full mt-3 xl:mt-0 flex-1">
-                                    <input name="url[]" type="url" class="form-control"
-                                        placeholder="https://youtube.com/embed/..." value="{{ old('url.0') }}">
+                                    <input id="url" name="url[]" type="text" class="form-control"
+                                        placeholder="https://youtube.com/embed/...">
+                                    @error('url')
+                                        <div class="text-danger form-help text-left">
+                                            {{ $message }}
+                                        </div>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -452,7 +456,7 @@
                                 </div>
                                 <div class="w-full mt-3 xl:mt-0 flex-1">
                                     <input id="url" name="url[]" type="text" class="form-control"
-                                        placeholder="URL" value="{{ old('url') }}">
+                                        placeholder="URL" >
                                     @error('url')
                                         <div class="text-danger form-help text-left">
                                             {{ $message }}

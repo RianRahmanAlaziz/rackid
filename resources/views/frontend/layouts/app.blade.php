@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/icon.png">
-    <title>Rackid</title>
-    <link rel="stylesheet preload" href="assets/css/plugins/fontawesome.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/swiper.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/metismenu.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/magnifying-popup.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/plugins/odometer.css" as="style">
-    <link rel="stylesheet preload" href="assets/css/vendor/bootstrap.min.css" as="style">
-    <link rel="stylesheet" href="assets/css/plugins/reset.css">
-    <link rel="stylesheet" href="assets/css/plugins/header-one.css">
-    <link rel="stylesheet" href="assets/css/plugins/banner.css">
-    <link rel="stylesheet" href="assets/css/plugins/service.css">
-    <link rel="stylesheet" href="assets/scss/elements/_search.css">
-    <link rel="stylesheet" href="assets/scss/elements/_about.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/icon.png">
+    <title>Rackid | {{ $title }}</title>
+    <link rel="stylesheet preload" href="/assets/css/plugins/fontawesome.css" as="style">
+    <link rel="stylesheet preload" href="/assets/css/plugins/swiper.css" as="style">
+    <link rel="stylesheet preload" href="/assets/css/plugins/metismenu.css" as="style">
+    <link rel="stylesheet preload" href="/assets/css/plugins/magnifying-popup.css" as="style">
+    <link rel="stylesheet preload" href="/assets/css/plugins/odometer.css" as="style">
+    <link rel="stylesheet preload" href="/assets/css/vendor/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="/assets/css/plugins/reset.css">
+    <link rel="stylesheet" href="/assets/css/plugins/header-one.css">
+    <link rel="stylesheet" href="/assets/css/plugins/banner.css">
+    <link rel="stylesheet" href="/assets/css/plugins/service.css">
+    <link rel="stylesheet" href="/assets/scss/elements/_search.css">
+    <link rel="stylesheet" href="/assets/scss/elements/_about.css">
 
 
 
@@ -26,8 +26,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet preload" as="style">
-    <link rel="preload" as="image" href="assets/images/banner/21.webp" />
-    <link rel="stylesheet preload" href="assets/css/style.css" as="style">
+    <link rel="preload" as="image" href="/assets/images/banner/21.webp" />
+    <link rel="stylesheet preload" href="/assets/css/style.css" as="style">
 </head>
 
 <body>
@@ -63,19 +63,19 @@
     <!-- progress area end -->
 
 
-    <script defer src="assets/js/plugins/jquery.js"></script>
-    <script defer src="assets/js/plugins/odometer.js"></script>
-    <script defer src="assets/js/plugins/jquery-appear.js"></script>
-    <script defer src="assets/js/plugins/gsap.js"></script>
-    <script defer src="assets/js/plugins/split-text.js"></script>
-    <script defer src="assets/js/plugins/scroll-trigger.js"></script>
-    <script defer src="assets/js/plugins/smooth-scroll.js"></script>
-    <script defer src="assets/js/plugins/metismenu.js"></script>
-    <script defer src="assets/js/plugins/popup.js"></script>
-    <script defer src="assets/js/vendor/bootstrap.min.js"></script>
-    <script defer src="assets/js/plugins/swiper.js"></script>
-    <script defer src="assets/js/plugins/contact.form.js"></script>
-    <script defer src="assets/js/main.js"></script>
+    <script defer src="/assets/js/plugins/jquery.js"></script>
+    <script defer src="/assets/js/plugins/odometer.js"></script>
+    <script defer src="/assets/js/plugins/jquery-appear.js"></script>
+    <script defer src="/assets/js/plugins/gsap.js"></script>
+    <script defer src="/assets/js/plugins/split-text.js"></script>
+    <script defer src="/assets/js/plugins/scroll-trigger.js"></script>
+    <script defer src="/assets/js/plugins/smooth-scroll.js"></script>
+    <script defer src="/assets/js/plugins/metismenu.js"></script>
+    <script defer src="/assets/js/plugins/popup.js"></script>
+    <script defer src="/assets/js/vendor/bootstrap.min.js"></script>
+    <script defer src="/assets/js/plugins/swiper.js"></script>
+    <script defer src="/assets/js/plugins/contact.form.js"></script>
+    <script defer src="/assets/js/main.js"></script>
 </body>
 
 </html>

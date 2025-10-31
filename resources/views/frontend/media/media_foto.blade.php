@@ -27,85 +27,59 @@
                 <div class="col-lg-12">
                     <div class="gallery-area-main-wrapper-4">
                         <div class="row g-5">
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/01.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/01.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
+                            @forelse ($image as $item)
+                                <div class="col-md-4">
+                                    <div class="single-gallery">
+                                        <a href="/assets/images/gallery/{{ $item->gambar }}"
+                                            class="thumbnail gallery-image">
+                                            <img src="/assets/images/gallery/{{ $item->gambar }}"
+                                                alt="{{ $item->ngambar }}">
+                                        </a>
+
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/03.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/03.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
-                                    </div>
+                            @empty
+                                <div class="col-12 text-center my-5">
+                                    <p class="text-muted">Belum ada gambar yang tersedia.</p>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/04.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/04.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/05.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/05.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/02.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/02.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="single-gallery">
-                                    <a href="assets/images/gallery/06.webp" class="thumbnail gallery-image">
-                                        <img src="assets/images/gallery/06.webp" alt="gallery">
-                                    </a>
-                                    <div class="instagram">
-                                        <img src="assets/images/gallery/instagram.svg" alt="instagram.svg">
-                                    </div>
-                                </div>
-                            </div>
+                            @endforelse
                         </div>
                     </div>
                 </div>
             </div>
         </div>
         <!-- pagination area -->
-        <div class="row">
-            <div class="col-12">
-                <div class="text-center">
-                    <div class="pagination">
-                        <button class="active">01</button>
-                        <button>02</button>
-                        <button>03</button>
-                        <button>04</button>
-                        <button><i class="fal fa-angle-double-right"></i></button>
+        @if ($image->hasPages())
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-center">
+                        <div class="pagination">
+                            {{-- Tombol halaman --}}
+                            @for ($i = 1; $i <= $image->lastPage(); $i++)
+                                @if ($i == $image->currentPage())
+                                    <button class="active">
+                                        {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                    </button>
+                                @else
+                                    <button onclick="window.location.href='{{ $image->url($i) }}'">
+                                        {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                    </button>
+                                @endif
+                            @endfor
+
+                            {{-- Tombol next --}}
+                            @if ($image->hasMorePages())
+                                <a href="{{ $image->nextPageUrl() }}">
+                                    <button><i class="fal fa-angle-double-right"></i></button>
+                                </a>
+                            @else
+                                <button disabled><i class="fal fa-angle-double-right"></i></button>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
     <!-- rts galllery area end -->
 @endsection

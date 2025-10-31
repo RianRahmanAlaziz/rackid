@@ -1,7 +1,7 @@
     @extends('frontend.layouts.app')
     @section('container')
         <div class="partner-breadcrumb bg_image"
-            style="background-image: url('assets/images/banner/heading_produk.png'); 
+            style="background-image: url('/assets/images/banner/heading_produk.png'); 
                 background-size: cover; 
                 background-position: center; 
                 background-repeat: no-repeat;
@@ -11,7 +11,7 @@
                     <div class="col-lg-12">
                         <div class="title-area-left center">
                             <h2 class="title">
-                                Close rack
+                                {{ $products->category->name }}
                             </h2>
                         </div>
                     </div>
@@ -26,41 +26,34 @@
                         <div class="banner-horizental">
                             <div class="swiper swiper-container-h1">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="slider-inner">
-                                            <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                                alt="full_screen-image">
+                                    @php
+                                        $images = json_decode($products->gambar, true) ?? [];
+                                        $thumbnails = json_decode($products->thumbnail, true) ?? [];
+                                        $sets = json_decode($products->set, true) ?? [];
+                                        $urls = json_decode($products->url, true) ?? [];
+                                        $allImages = array_merge($images, $thumbnails, $sets);
+                                        $mainImages = array_slice($allImages, 0, 4);
+                                        $mainVideos = array_slice($urls, 0, 2);
+                                        $carouselItems = array_merge($mainImages, $mainVideos);
+                                    @endphp
+                                    @foreach ($mainImages as $index => $image)
+                                        <div class="swiper-slide">
+                                            <div class="slider-inner">
+                                                <img src={{ asset('assets/images/product/' . $image) }}
+                                                    alt="full_screen-image">
+                                            </div>
                                         </div>
-                                    </div>
+                                    @endforeach
 
-                                    <div class="swiper-slide">
-                                        <div class="slider-inner">
-                                            <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_02.png"
-                                                alt="full_screen-image">
-                                        </div>
-                                    </div>
-
-                                    <div class="swiper-slide">
-                                        <div class="slider-inner">
-                                            <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_03.png"
-                                                alt="full_screen-image">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-6 mt_md--180 mt_sm--180">
                         <div class="ms-single-product__content">
-                            <h2 class="ms-single-product_title">Modernize Shovel</h2>
+                            <h2 class="ms-single-product_title"> {{ $products->productname }}</h2>
                             <div class="woocommerce-product-details__short-description">
-                                <p>Progressively incentivize B2C content vis-a-vis reliable experiences.
-                                    Phosfluorescently benchmark unique e-services whereas transparent
-                                    collaboration and idea-sharing. Enthusiastically communicate maintainable
-                                    networks via global metrics. Credibly negotiate progressive bandwidth for go
-                                    forward e-commerce. Rapidiously evolve magnetic initiatives through
-                                    client-based portals.
-                                </p>
+                                {!! $products->description !!}
                             </div>
                         </div>
                     </div>
@@ -84,64 +77,25 @@
                         <div class="swiper-related-shop-area">
                             <div class="swiper mySwiper-related-shop">
                                 <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="rts-single-shop-area">
-                                            <a href="#" class="thumbnail">
-                                                <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_03.png"
-                                                    alt="shop">
-                                            </a>
-                                            <div class="inner-content">
-                                                <a href="#">
-                                                    <h4 class="title">Music Headphones</h4>
+                                    @foreach ($product as $item)
+                                        @php
+                                            $gambarArray = json_decode($item->gambar, true);
+                                        @endphp
+                                        <div class="swiper-slide">
+                                            <div class="rts-single-shop-area">
+                                                <a href="/produk/{{ $item->slug }}" class="thumbnail">
+                                                    <img src="{{ asset('assets/images/product/' . $gambarArray[0]) }}"
+                                                        alt="{{ $item->productname }}">
                                                 </a>
+                                                <div class="inner-content">
+                                                    <a href="/produk/{{ $item->slug }}">
+                                                        <h4 class="title">{{ $item->productname }}</h4>
+                                                    </a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="rts-single-shop-area">
-                                            <a href="#" class="thumbnail">
-                                                <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_02.png"
-                                                    alt="shop">
-                                            </a>
-                                            <div class="inner-content">
+                                    @endforeach
 
-                                                <a href="#">
-                                                    <h4 class="title">Hand holding photo camera</h4>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="rts-single-shop-area">
-                                            <a href="#" class="thumbnail">
-                                                <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_03.png"
-                                                    alt="shop">
-                                            </a>
-                                            <div class="inner-content">
-
-                                                <a href="#">
-                                                    <h4 class="title">Levitating cosmetic cream</h4>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="rts-single-shop-area">
-                                            <a href="#" class="thumbnail">
-                                                <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                                    alt="shop">
-                                            </a>
-                                            <div class="inner-content">
-
-                                                <a href="#">
-                                                    <h4 class="title">Music Headphones</h4>
-                                                </a>
-
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

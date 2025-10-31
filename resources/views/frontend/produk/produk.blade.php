@@ -22,8 +22,6 @@
 
     <!-- partners area breadcrumb area end -->
 
-
-
     <div class="shop-area-start rts-section-gapTop">
         <div class="container pb-5">
             <div class="row g-5">
@@ -34,8 +32,12 @@
 
                         <!-- Search Box -->
                         <div class="search-box-modern mb-3">
-                            <input type="text" class="form-control" id="searchInput"
-                                placeholder="Cari produk atau kategori...">
+                            <form action="{{ url()->current() }}" method="get">
+                                <input type="text" class="form-control" id="searchInput" name="search"
+                                    placeholder="Cari produk atau kategori..."
+                                    value="{{ old('search', request('search')) }}">
+                            </form>
+
                         </div>
 
                         <!-- Accordion -->
@@ -106,92 +108,63 @@
                 <!-- Product List -->
                 <div class="col-lg-9 col-md-8">
                     <div class="row g-5">
-                        <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
-                            <div class="rts-single-shop-area">
-                                <a href="/detail_produk" class="thumbnail">
-                                    <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                        alt="shop">
-                                </a>
-                                <div class="inner-content">
-                                    <a href="/detail_produk">
-                                        <h4 class="title">Music Headphones</h4>
+                        @forelse ($products as $product)
+                            <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
+                                <div class="rts-single-shop-area">
+                                    @php
+                                        $gambarArray = json_decode($product->gambar, true);
+                                    @endphp
+                                    <a href="/produk/{{ $product->slug }}" class="thumbnail">
+                                        <img src="{{ asset('assets/images/product/' . $gambarArray[0]) }}"
+                                            alt="{{ $product->productname }}">
                                     </a>
+                                    <div class="inner-content">
+                                        <a href="/produk/{{ $product->slug }}">
+                                            <h4 class="title">{{ $product->productname }}</h4>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.3">
-                            <div class="rts-single-shop-area">
-                                <a href="/detail_produk" class="thumbnail">
-                                    <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                        alt="shop">
-                                </a>
-                                <div class="inner-content">
-                                    <a href="/detail_produk">
-                                        <h4 class="title">White joystick gamepad</h4>
-                                    </a>
-                                </div>
+                        @empty
+                            <div class="col-12 text-center my-5">
+                                <p class="text-muted">Belum ada Product yang tersedia.</p>
                             </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.4">
-                            <div class="rts-single-shop-area">
-                                <a href="detail_products.html" class="thumbnail">
-                                    <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                        alt="shop">
-                                </a>
-                                <div class="inner-content">
-                                    <a href="detail_products.html">
-                                        <h4 class="title">Smartwatch screen digital</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
-                            <div class="rts-single-shop-area">
-                                <a href="detail_products.html" class="thumbnail">
-                                    <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                        alt="shop">
-                                </a>
-                                <div class="inner-content">
-                                    <a href="detail_products.html">
-                                        <h4 class="title">Hiking Boots With Pink</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.3">
-                            <div class="rts-single-shop-area">
-                                <a href="detail_products.html" class="thumbnail">
-                                    <img src="assets/images/shop/PRODUCT WEB - 699 X 614 - Wallmount rack 6015_01.png"
-                                        alt="shop">
-                                </a>
-                                <div class="inner-content">
-                                    <a href="detail_products.html">
-                                        <h4 class="title">Glasses with rounded frames</h4>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                        @endforelse
                     </div> <!-- end product row -->
                 </div>
             </div>
             <!-- pagination area -->
-            <div class="row">
-                <div class="col-12">
-                    <div class="text-center">
-                        <div class="pagination">
-                            <button class="active">01</button>
-                            <button>02</button>
-                            <button>03</button>
-                            <button>04</button>
-                            <button><i class="fal fa-angle-double-right"></i></button>
+            @if ($products->hasPages())
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div class="pagination">
+                                {{-- Tombol halaman --}}
+                                @for ($i = 1; $i <= $products->lastPage(); $i++)
+                                    @if ($i == $products->currentPage())
+                                        <button class="active">
+                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                        </button>
+                                    @else
+                                        <button onclick="window.location.href='{{ $products->url($i) }}'">
+                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                        </button>
+                                    @endif
+                                @endfor
+
+                                {{-- Tombol next --}}
+                                @if ($products->hasMorePages())
+                                    <a href="{{ $products->nextPageUrl() }}">
+                                        <button><i class="fal fa-angle-double-right"></i></button>
+                                    </a>
+                                @else
+                                    <button disabled><i class="fal fa-angle-double-right"></i></button>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
 
     </div>
