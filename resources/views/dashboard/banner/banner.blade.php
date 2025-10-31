@@ -1,7 +1,7 @@
 @extends('dashboard.layouts.app')
 
 @section('container')
-    <div class="intro-y flex flex-col items-start mt-24 max-w-6xl">
+    <div class="intro-y flex flex-col items-start mt-8 xl:mt-24 max-w-6xl">
         <h2 class="text-lg font-medium">Banner Slider</h2>
     </div>
 

@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('container')
-    <div class="grid grid-cols-11 gap-x-6 mt-20 pb-20">
+    <div class="grid grid-cols-11 gap-x-6 mt-8 xl:mt-24 pb-20">
         <div class="intro-y col-span-11 2xl:col-span-9">
             <form action="{{ url('/dashboard/banner') }}" method="post" enctype="multipart/form-data">
                 @csrf

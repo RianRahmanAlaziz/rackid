@@ -1,6 +1,6 @@
 @extends('dashboard.layouts.app')
 @section('container')
-    <div class="intro-y flex items-center mt-20">
+    <div class="intro-y flex items-center mt-8 xl:mt-24">
         <h2 class="text-lg font-medium mr-auto">
             Add Product
         </h2>

@@ -9,7 +9,7 @@
           <li class="side-nav__devider my-6"></li>
           <li>
               <a href="javascript:;"
-                  class="side-menu {{ Request::is('dashboard/banner*', 'dashboard/category*', 'dashboard/product*', 'dashboard/gallery*') ? 'side-menu--active side-menu--open' : '' }}">
+                  class="side-menu {{ Request::is('dashboard/banner*', 'dashboard/category*', 'dashboard/product*', 'dashboard/gallery*', 'dashboard/document*') ? 'side-menu--active side-menu--open' : '' }}">
                   <div class="side-menu__icon"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                           viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                           stroke-linecap="round" stroke-linejoin="round"
@@ -24,7 +24,7 @@
                   </div>
               </a>
               <ul
-                  class=" {{ Request::is('dashboard/banner*', 'dashboard/category*', 'dashboard/product*', 'dashboard/gallery*') ? 'side-menu__sub-open' : '' }}">
+                  class=" {{ Request::is('dashboard/banner*', 'dashboard/category*', 'dashboard/product*', 'dashboard/gallery*', 'dashboard/document*') ? 'side-menu__sub-open' : '' }}">
                   <li>
                       <a href="/dashboard/banner"
                           class="side-menu {{ Request::is('dashboard/banner*') ? 'side-menu--active' : '' }}">
@@ -72,16 +72,33 @@
                   <li>
                       <a href="/dashboard/gallery"
                           class="side-menu {{ Request::is('dashboard/gallery*') ? 'side-menu--active' : '' }}">
-                          <div class="side-menu__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                  height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                  class="lucide lucide-images-icon lucide-images">
+                          <div class="side-menu__icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round" class="lucide lucide-images-icon lucide-images">
                                   <path d="m22 11-1.296-1.296a2.4 2.4 0 0 0-3.408 0L11 16" />
                                   <path d="M4 8a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2" />
                                   <circle cx="13" cy="7" r="1" fill="currentColor" />
                                   <rect x="8" y="2" width="14" height="14" rx="2" />
-                              </svg></div>
+                              </svg>
+                          </div>
                           <div class="side-menu__title"> Gallery </div>
+                      </a>
+                  </li>
+                  <li>
+                      <a href="/dashboard/document"
+                          class="side-menu {{ Request::is('dashboard/document*') ? 'side-menu--active' : '' }}">
+                          <div class="side-menu__icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                  stroke-linejoin="round" class="lucide lucide-files-icon lucide-files">
+                                  <path
+                                      d="M15 2a2 2 0 0 1 1.414.586l4 4A2 2 0 0 1 21 8v7a2 2 0 0 1-2 2h-8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+                                  <path d="M15 2v4a2 2 0 0 0 2 2h4" />
+                                  <path d="M5 7a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h8a2 2 0 0 0 1.732-1" />
+                              </svg>
+                          </div>
+                          <div class="side-menu__title"> Document </div>
                       </a>
                   </li>
               </ul>

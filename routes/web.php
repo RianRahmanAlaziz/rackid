@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BannerController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DokumentController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
@@ -30,12 +31,11 @@ Route::middleware(['auth'])->prefix('dashboard')->group(function () {
         'product'      => ProductController::class,
         'category'     => CategoryController::class,
         'gallery'      => GalleryController::class,
-        'banner'      => BannerController::class,
-        // 'info'         => InfoController::class,
+        'banner'       => BannerController::class,
+        'document'     => DokumentController::class,
         // 'clients'      => ClientsController::class,
         // 'contact'      => ContactController::class,
         // 'whychoose'    => WhychooseController::class,
         // 'aboutus'      => AboutusController::class,
-        // ✅ konsisten pakai plural
     ]);
 });
