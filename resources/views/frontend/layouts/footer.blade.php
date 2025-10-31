@@ -26,16 +26,16 @@
                         </div>
                         <div class="quick-link-inner">
                             <ul class="links">
-                                <li><a href="index.html"><i class="far fa-arrow-right"></i> Home</a></li>
-                                <li><a href="about.html"><i class="far fa-arrow-right"></i> About Us</a></li>
-                                <li><a href="products.html"><i class="far fa-arrow-right"></i> Products</a></li>
-                                <li><a href="contact.html"><i class="far fa-arrow-right"></i> Hubungi Kami</a></li>
+                                <li><a href="/"><i class="far fa-arrow-right"></i> Home</a></li>
+                                <li><a href="/aboutus"><i class="far fa-arrow-right"></i> About Us</a></li>
+                                <li><a href="/produk"><i class="far fa-arrow-right"></i> Products</a></li>
+                                <li><a href="/contactus"><i class="far fa-arrow-right"></i> Hubungi Kami</a></li>
                             </ul>
                             <ul class="links margin-left-70">
-                                <li><a href="#"><i class="far fa-arrow-right"></i> Brosur</a></li>
-                                <li><a href="#"><i class="far fa-arrow-right"></i> Datasheet</a></li>
-                                <li><a href="media_foto.html"><i class="far fa-arrow-right"></i> Galeri Foto</a></li>
-                                <li><a href="media_video.html"><i class="far fa-arrow-right"></i> Galeri Video</a>
+                                <li><a href="/brosur"><i class="far fa-arrow-right"></i> Brosur</a></li>
+                                <li><a href="/datasheet"><i class="far fa-arrow-right"></i> Datasheet</a></li>
+                                <li><a href="/media_foto"><i class="far fa-arrow-right"></i> Galeri Foto</a></li>
+                                <li><a href="/media_video"><i class="far fa-arrow-right"></i> Galeri Video</a>
                                 </li>
                             </ul>
                         </div>

@@ -38,25 +38,25 @@
                         <a href="/" class="main" aria-expanded="false">Home</a>
                     </li>
                     <li>
-                        <a href="about.html" class="main" aria-expanded="false">About Us</a>
+                        <a href="/aboutus" class="main" aria-expanded="false">About Us</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Products</a>
+                        <a href="/produk" class="main" aria-expanded="false">Products</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Brosur</a>
+                        <a href="/brosur" class="main" aria-expanded="false">Brosur</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Datasheet</a>
+                        <a href="/datasheet" class="main" aria-expanded="false">Datasheet</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Media Foto</a>
+                        <a href="/media_foto" class="main" aria-expanded="false">Media Foto</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Media Video</a>
+                        <a href="/media_video" class="main" aria-expanded="false">Media Video</a>
                     </li>
                     <li>
-                        <a href="contact.html" class="main" aria-expanded="false">Contact Us</a>
+                        <a href="/contactus" class="main" aria-expanded="false">Contact Us</a>
                     </li>
                 </ul>
 

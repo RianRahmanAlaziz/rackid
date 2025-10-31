@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 @section('container')
-    <!-- partners area breadcrumb area wrapper -->
     <div class="partner-breadcrumb bg_image"
         style="background-image: url('assets/images/banner/heading_produk.png'); 
             background-size: cover; 
@@ -37,6 +36,8 @@
                             <input type="text" class="form-control" id="searchInput"
                                 placeholder="Cari produk atau kategori...">
                         </div>
+
+                        <button class="toggle-products-btn" onclick="toggleAccordion()">Lihat Daftar Produk</button>
 
                         <!-- Accordion -->
                         <div class="accordion-modern" id="productAccordion">
@@ -195,4 +196,22 @@
         </div>
 
     </div>
+
+
+    <script>
+        function toggleAccordion() {
+            const accordion = document.getElementById("productAccordion");
+            accordion.classList.toggle("show");
+        }
+    </script>
+
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 @endsection

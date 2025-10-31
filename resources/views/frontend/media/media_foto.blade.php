@@ -92,6 +92,7 @@
                 </div>
             </div>
         </div>
+
         <!-- pagination area -->
         <div class="row">
             <div class="col-12">

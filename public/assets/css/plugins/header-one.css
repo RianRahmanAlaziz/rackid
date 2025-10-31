@@ -381,3 +381,34 @@
     border-radius: 8px !important;
     padding: 8px 15px !important;
 }
+
+
+/* Tombol hanya muncul di layar mobile */
+.toggle-products-btn {
+    display: none;
+    background: linear-gradient(to top, rgb(193, 18, 28), rgb(255, 67, 67)) !important;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Responsive: hanya tampil di mobile */
+@media (max-width: 768px) {
+    .toggle-products-btn {
+        display: block;
+    }
+
+    .accordion-modern {
+        display: none;
+    }
+
+    .accordion-modern.show {
+        display: block;
+    }
+}

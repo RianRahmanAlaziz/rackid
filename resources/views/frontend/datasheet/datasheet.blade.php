@@ -18,9 +18,9 @@
                </div>
            </div>
            <div class="shape-area">
-               <img src="assets/images/about/shape/01.png" alt="shape" class="one">
-               <img src="assets/images/about/shape/02.png" alt="shape" class="two">
-               <img src="assets/images/about/shape/03.png" alt="shape" class="three">
+               <img src="assets/images/about/shape/bg_about1.png" alt="shape" class="one">
+               <img src="assets/images/about/shape/bg_about02.png " alt="shape" class="two">
+               <img src="assets/images/about/shape/bg_05.png" alt="shape" class="three">
            </div>
        </div>
        <!-- rts document download area start -->

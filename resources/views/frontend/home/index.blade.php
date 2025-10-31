@@ -88,7 +88,7 @@
                 <div class="col-xl-4 col-lg-6 col-sm-12" data-animation="fadeInUp" data-delay="0.7" data-duration="1.2">
                     <div class="single-service-hr">
                         <a href="#" class="thumbnail">
-                            <img src="assets/images/service/orang.png" alt="Gratis Perakitan">
+                            <img src="assets/images/service/perakitan.png" alt="Gratis Perakitan">
                         </a>
                         <div class="inner text-center">
                             <div class="icon-area mb-3">
@@ -104,8 +104,6 @@
                     </div>
                 </div>
             </div>
-
-
         </div>
     </div>
     <!-- rts service area end -->
