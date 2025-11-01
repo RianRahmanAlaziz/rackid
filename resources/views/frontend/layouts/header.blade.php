@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="header-top-one-wrapper">
+                    <div class="header-top-one-wrapper" style="padding: 5px;">
                         <div class="left" style="padding: 10px 0; border: none;">
                             <div class="working-time" style="border: none; padding: 5px 0;">
                             </div>
