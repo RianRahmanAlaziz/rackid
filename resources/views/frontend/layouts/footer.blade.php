@@ -11,11 +11,11 @@
                             Dirancang dengan presisi untuk menghadirkan stabilitas, efisiensi, dan performa terbaik bagi
                             infrastruktur server Anda.
                         </p>
-                        <ul class="social-area-wrapper-two">
+                        {{-- <ul class="social-area-wrapper-two">
                             <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
                             <li><a href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                        </ul>
+                        </ul> --}}
                     </div>
                 </div>
                 <div class="offset-lg-1 col-lg-4">
