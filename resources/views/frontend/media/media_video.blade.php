@@ -42,7 +42,7 @@
                                 </div>
                             @empty
                                 <div class="col-12 text-center my-5">
-                                    <p class="text-muted">Belum ada gambar yang tersedia.</p>
+                                    <p class="text-muted">Belum ada video yang tersedia.</p>
                                 </div>
                             @endforelse
 

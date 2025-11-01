@@ -26,7 +26,7 @@ class FrontendController extends Controller
 
     public function produk(Request $request)
     {
-        $query = Product::with('category');  // Eager loading kategori
+        $query = Product::with('category'); // Eager loading kategori
 
         // Filter berdasarkan kategori (termasuk parent dan child categories)
         if ($request->has('category') && !empty($request->input('category'))) {
@@ -47,6 +47,7 @@ class FrontendController extends Controller
                 });
             }
         }
+
         // Filter berdasarkan pencarian
         if ($request->has('search') && !empty($request->input('search'))) {
             $search = $request->input('search');
@@ -55,12 +56,18 @@ class FrontendController extends Controller
 
         $products = $query->paginate(5);
 
+
+        $categories = Category::with('children')
+            ->whereNull('parent_id') // hanya parent categories
+            ->get();
+
         return view('frontend.produk.produk', [
             'title' => 'Produk',
             'products' => $products->appends([
                 'search' => $request->input('search'),
                 'category' => $request->input('category'),
             ]),
+            'categories' => $categories,
         ]);
     }
 

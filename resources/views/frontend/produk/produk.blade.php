@@ -39,70 +39,28 @@
                             </form>
 
                         </div>
-
                         <!-- Accordion -->
                         <div class="accordion-modern" id="productAccordion">
+                            @foreach ($categories as $parent)
+                                <div class="accordion-item">
+                                    <button class="accordion-header">
+                                        {{ $parent->name }}
+                                        <span class="accordion-icon">+</span>
+                                    </button>
 
-                            <!-- Item -->
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    Smart Integrated Rack
-                                    <span class="accordion-icon">+</span>
-                                </button>
-                                <div class="accordion-body">
-                                    <a href="#">Smart Rack 18U</a>
-                                    <a href="#">Smart Rack 27U</a>
-                                    <a href="#">Smart Rack 42U</a>
+                                    @if ($parent->children->count() > 0)
+                                        <div class="accordion-body">
+                                            @foreach ($parent->children as $child)
+                                                <a href="{{ route('produk', ['category' => $child->slug]) }}">
+                                                    {{ $child->name }}
+                                                </a>
+                                            @endforeach
+                                        </div>
+                                    @endif
                                 </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    Device Charging Rack
-                                    <span class="accordion-icon">+</span>
-                                </button>
-                                <div class="accordion-body">
-                                    <a href="#">Charging 10 Port</a>
-                                    <a href="#">Charging 20 Port</a>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    Standing Close Rack 19”
-                                    <span class="accordion-icon">+</span>
-                                </button>
-                                <div class="accordion-body">
-                                    <a href="#">SC Rack 18U</a>
-                                    <a href="#">SC Rack 22U</a>
-                                    <a href="#">SC Rack 27U</a>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    Wallmount Rack 19”
-                                    <span class="accordion-icon">+</span>
-                                </button>
-                                <div class="accordion-body">
-                                    <a href="#">Wallmount 9U</a>
-                                    <a href="#">Wallmount 12U</a>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item">
-                                <button class="accordion-header">
-                                    Accessories
-                                    <span class="accordion-icon">+</span>
-                                </button>
-                                <div class="accordion-body">
-                                    <a href="#">Fan Tray</a>
-                                    <a href="#">Power Rail</a>
-                                    <a href="#">Cable Organizer</a>
-                                </div>
-                            </div>
-
+                            @endforeach
                         </div>
+
                     </div>
                 </div>
                 <!-- Product List -->
@@ -168,4 +126,14 @@
         </div>
 
     </div>
+
+
+    <script>
+        document.querySelectorAll('.accordion-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
 @endsection

@@ -38,52 +38,42 @@
                                         <a href="/aboutus" style="white-space: nowrap;">About Us</a>
                                     </li>
                                     <li class="main-nav has-dropdown mega-menu">
-                                        <a href="/produk">Products</a>
+                                        <a href="{{ route('produk') }}">Products</a>
                                         <div class="rts-mega-menu">
                                             <div class="wrapper">
                                                 <div class="container">
                                                     <div class="row g-0">
-                                                        <div class="col-lg-3">
-                                                            <ul class="mega-menu-item with-list parent-nav">
-                                                                <li><a href="about.html"><i
-                                                                            class="fa-sharp fa-regular fa-chevron-right"></i>Close
-                                                                        rack
-                                                                    </a></li>
-                                                                <li><a href="project.html"><i
-                                                                            class="fa-sharp fa-regular fa-chevron-right"></i>Accesories
-                                                                        rack</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul class="mega-menu-item with-list parent-nav">
-                                                                <li><a href="service-details.html"><i
-                                                                            class="fa-sharp fa-regular fa-chevron-right"></i>Open
-                                                                        wallmount</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul class="mega-menu-item with-list parent-nav">
-                                                                <li><a href="service-details.html"><i
-                                                                            class="fa-sharp fa-regular fa-chevron-right"></i>Open
-                                                                        wallmount</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div class="col-lg-3">
-                                                            <ul class="mega-menu-item with-list parent-nav">
-                                                                <li><a href="service-details-2.html"><i
-                                                                            class="fa-sharp fa-regular fa-chevron-right"></i>Folding
-                                                                        Wallmount</a>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
+                                                        @foreach ($categories as $parent)
+                                                            <div class="col-lg-3">
+                                                                <ul class="mega-menu-item with-list parent-nav">
+                                                                    <li>
+                                                                        <a
+                                                                            href="{{ route('produk', ['category' => $parent->slug]) }}">
+                                                                            <i
+                                                                                class="fa-sharp fa-regular fa-chevron-right"></i>
+                                                                            {{ $parent->name }}
+                                                                        </a>
+                                                                    </li>
+
+                                                                    @if ($parent->children->count() > 0)
+                                                                        @foreach ($parent->children as $child)
+                                                                            <li class="ms-3">
+                                                                                <a
+                                                                                    href="{{ route('produk', ['category' => $child->slug]) }}">
+                                                                                    {{ $child->name }}
+                                                                                </a>
+                                                                            </li>
+                                                                        @endforeach
+                                                                    @endif
+                                                                </ul>
+                                                            </div>
+                                                        @endforeach
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </li>
+
                                     <li class="main-nav has-dropdown project-a-after">
                                         <a href="#">Docs</a>
                                         <ul class="submenu parent-nav">
