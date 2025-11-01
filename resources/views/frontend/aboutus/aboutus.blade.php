@@ -49,17 +49,17 @@
                 <div class="col-lg-6 mt_sm--80 mt_md--80">
                     <div class="about-inner-content-two">
                         <div class="title-style-two left">
-                            <span class="bg-content">About Us</span>
-                            <span class="pre">More About Us</span>
-                            <h2 class="title rts-text-anime-style-1">Empowering You to Feel <br> Your Best Every Day
+                            <span class="bg-content">Tentang Kami</span>
+                            <h2 class="title rts-text-anime-style-1">Mitra Terpercaya untuk Solusi Rak Server dan
+                                Infrastruktur Digital
                             </h2>
                         </div>
                         <div class="about-between-wrapper">
                             <p class="disc">
-                                Porttitor ornare fermentum aliquam pharetra
-                                ut facilisis gravida risus suscipit. dui feugiat
-                                fusce conubia ridiculus tristique parturient
-                                natoque vulputate risu.
+                                Kami menghadirkan solusi rak server dan infrastruktur berkualitas tinggi untuk mendukung
+                                efisiensi dan transformasi digital bisnis Anda.
+                                Dengan standar internasional, layanan profesional, dan inovasi berkelanjutan, kami
+                                berkomitmen menjadi bagian dari kemajuan industri modern.
                             </p>
                         </div>
                     </div>
@@ -79,18 +79,22 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mt_sm--80 mt_md--80">
                     <div class="about-inner-content-two">
-                        <div class="title-style-two left">
-                            <span class="pre">More About Us</span>
-                            <h2 class="title rts-text-anime-style-1">Empowering You to Feel <br> Your Best Every Day
-                            </h2>
-                        </div>
                         <div class="about-between-wrapper">
-                            <p class="disc">
-                                Porttitor ornare fermentum aliquam pharetra
-                                ut facilisis gravida risus suscipit. dui feugiat
-                                fusce conubia ridiculus tristique parturient
-                                natoque vulputate risu.
-                            </p>
+                            <div class="visi-misi mt-4">
+                                <h3 class="sub-title">Visi</h3>
+                                <p class="disc">
+                                    Menjadi mitra utama dalam solusi rak server dan infrastruktur digital terbaik di
+                                    Indonesia
+                                    yang mendorong efisiensi dan transformasi bisnis berkelanjutan.
+                                </p>
+
+                                <h3 class="sub-title mt-3">Misi</h3>
+                                <ul class="disc">
+                                    <li>Menyediakan produk berkualitas tinggi dengan standar internasional.</li>
+                                    <li>Membangun kepercayaan dan hubungan jangka panjang melalui layanan profesional.</li>
+                                    <li>Berinovasi dalam desain dan teknologi untuk menjawab kebutuhan industri modern.</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>

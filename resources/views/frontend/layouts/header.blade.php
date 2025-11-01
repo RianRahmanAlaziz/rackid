@@ -37,6 +37,13 @@
                                     <li class="main-nav">
                                         <a href="/aboutus" style="white-space: nowrap;">About Us</a>
                                     </li>
+
+                                    @php
+                                        use App\Models\Category;
+                                        // Ambil semua parent categories beserta child-nya
+                                        $categories = Category::with('children')->whereNull('parent_id')->get();
+                                    @endphp
+
                                     <li class="main-nav has-dropdown mega-menu">
                                         <a href="{{ route('produk') }}">Products</a>
                                         <div class="rts-mega-menu">

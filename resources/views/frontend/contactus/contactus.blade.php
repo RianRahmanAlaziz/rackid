@@ -30,20 +30,28 @@
                         <div class="single-contact-info">
                             <div class="info-wrapper">
                                 <span>Hubungi Kami</span>
-                                <a href="#">+62 821 1224 8872</a>
+                                <a href="#">
+                                    <h5 style="color: #fff; font-size:15px;">+62 821 1224 8872</h5>
+                                </a>
+                                <a href="#"></a>
                             </div>
                         </div>
                         <div class="single-contact-info">
                             <div class="info-wrapper">
                                 <span>Bergabung Bersama Kami</span>
-                                <a href="#">customercare@rack.id</a>
+                                <a href="#">
+                                    <h5 style="color: #fff; font-size:15px;">customercare@rack.id</h5>
+                                </a>
                             </div>
                         </div>
                         <div class="single-contact-info">
                             <div class="info-wrapper">
                                 <span>Lokasi Kami</span>
-                                <a href="#">Jl. Kapuk Kencana No.35A, RT.007/RW.3, Kapuk Muara, Kecamatan
-                                    Penjaringan,Jkt Utara, Daerah Khusus Ibukota Jakarta 14460</a>
+                                <a href="#">
+                                    <h5 style="color: #fff; font-size:15px;">Jl. Kapuk Kencana No.35A, RT.007/RW.3, Kapuk
+                                        Muara, Kecamatan
+                                        Penjaringan,Jkt Utara, Daerah Khusus Ibukota Jakarta 14460</h5>
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -11,19 +11,19 @@
                 </p>
                 <div class="get-in-touch">
                     <!-- title -->
-                    <div class="h6 title">Get In Touch</div>
+                    <div class="h6 title">Hubungi Kami</div>
                     <!-- title End -->
                     <div class="wrapper">
                         <!-- single -->
                         <div class="single">
                             <i class="fas fa-phone-alt"></i>
-                            <a href="#">+8801234566789</a>
+                            <a href="#">+6282112248872</a>
                         </div>
                         <!-- single ENd -->
                         <!-- single -->
                         <div class="single">
                             <i class="fas fa-envelope"></i>
-                            <a href="#">example@gmail.com</a>
+                            <a href="#">customercare@rack.id</a>
                         </div>
                         <!-- single ENd -->
                     </div>
@@ -38,25 +38,25 @@
                         <a href="/" class="main" aria-expanded="false">Home</a>
                     </li>
                     <li>
-                        <a href="about.html" class="main" aria-expanded="false">About Us</a>
+                        <a href="/aboutus" class="main" aria-expanded="false">About Us</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Products</a>
+                        <a href="/produk" class="main" aria-expanded="false">Products</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Brosur</a>
+                        <a href="/brosur" class="main" aria-expanded="false">Brosur</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Datasheet</a>
+                        <a href="/datasheet" class="main" aria-expanded="false">Datasheet</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Media Foto</a>
+                        <a href="/media-foto" class="main" aria-expanded="false">Media Foto</a>
                     </li>
                     <li>
-                        <a href="products.html" class="main" aria-expanded="false">Media Video</a>
+                        <a href="/media-video" class="main" aria-expanded="false">Media Video</a>
                     </li>
                     <li>
-                        <a href="contact.html" class="main" aria-expanded="false">Contact Us</a>
+                        <a href="/contactus" class="main" aria-expanded="false">Contact Us</a>
                     </li>
                 </ul>
 

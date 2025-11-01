@@ -75,7 +75,7 @@
                                 <i class="fa-solid fa-truck-fast fa-3x text-white"></i>
                             </div>
                             <a href="#">
-                                <h3 class="title">Gratis Pengiriman</h3>
+                                <h3 class="title">Gratis Pengiriman*</h3>
                             </a>
                             <p class="disc">
                                 Layanan Pengiriman Gratis.
@@ -95,7 +95,7 @@
                                 <i class="fa-solid fa-screwdriver-wrench fa-3x text-white"></i>
                             </div>
                             <a href="#">
-                                <h3 class="title">Gratis Perakitan</h3>
+                                <h3 class="title">Gratis Perakitan*</h3>
                             </a>
                             <p class="disc">
                                 Layanan Perakitan Dan Instalasi Rack Server.
