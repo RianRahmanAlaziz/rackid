@@ -5,8 +5,6 @@
                 <div class="col-lg-12">
                     <div class="header-top-one-wrapper">
                         <div class="left" style="padding: 10px 0; border: none;">
-                            <div class="mail" style="border: none; padding: 5px 0;">
-                            </div>
                             <div class="working-time" style="border: none; padding: 5px 0;">
                             </div>
                         </div>
