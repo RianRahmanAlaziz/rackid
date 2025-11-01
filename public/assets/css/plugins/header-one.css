@@ -381,3 +381,35 @@
     border-radius: 8px !important;
     padding: 8px 15px !important;
 }
+
+
+.left {
+    padding: 10px 0;
+    /* atur sesuai kebutuhan */
+}
+
+.left .mail a,
+.left .working-time p {
+    font-size: 14px;
+    color: #333;
+    text-decoration: none !important;
+    margin: 0;
+    padding: 5px 0;
+    display: block;
+}
+
+.left .mail a:hover {
+    text-decoration: underline;
+}
+
+/* pastikan tidak ada ikon/gambar tersisa */
+.left i {
+    display: none !important;
+}
+
+/* jika sebelumnya ada border atau garis */
+.left,
+.mail,
+.working-time {
+    border: none !important;
+}

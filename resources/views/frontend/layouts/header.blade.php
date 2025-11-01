@@ -6,11 +6,11 @@
                     <div class="header-top-one-wrapper">
                         <div class="left">
                             <div class="mail">
-                                <a href="mailto:webmaster@example.com">
-                                </a>
+                                <a href="mailto:webmaster@example.com"><i class="fal fa-envelope"></i>
+                                    customercare@rack.id</a>
                             </div>
                             <div class="working-time">
-                                <p></p>
+                                <p><i class="fal fa-clock"></i> Working: 8.00am - 5.00pm</p>
                             </div>
                         </div>
                     </div>
