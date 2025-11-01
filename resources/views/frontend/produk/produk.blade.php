@@ -73,7 +73,7 @@
                                         $gambarArray = json_decode($product->gambar, true);
                                     @endphp
                                     <a href="/produk/{{ $product->slug }}" class="thumbnail">
-                                        <img src="{{ asset('assets/images/product/' . $gambarArray[0]) }}"
+                                        <img src="{{ asset('/assets/images/product/' . $gambarArray[0]) }}"
                                             alt="{{ $product->productname }}">
                                     </a>
                                     <div class="inner-content">

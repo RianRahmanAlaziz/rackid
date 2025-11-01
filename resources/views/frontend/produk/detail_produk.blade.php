@@ -39,7 +39,7 @@
                                     @foreach ($mainImages as $index => $image)
                                         <div class="swiper-slide">
                                             <div class="slider-inner">
-                                                <img src={{ asset('assets/images/product/' . $image) }}
+                                                <img src={{ asset('/assets/images/product/' . $image) }}
                                                     alt="full_screen-image">
                                             </div>
                                         </div>
@@ -84,7 +84,7 @@
                                         <div class="swiper-slide">
                                             <div class="rts-single-shop-area">
                                                 <a href="/produk/{{ $item->slug }}" class="thumbnail">
-                                                    <img src="{{ asset('assets/images/product/' . $gambarArray[0]) }}"
+                                                    <img src="{{ asset('/assets/images/product/' . $gambarArray[0]) }}"
                                                         alt="{{ $item->productname }}">
                                                 </a>
                                                 <div class="inner-content">

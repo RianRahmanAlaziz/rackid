@@ -5,7 +5,7 @@
                 <div class="col-lg-3">
                     <div class="footer-logo-area-left-8">
                         <a href="#" class="logo">
-                            <img src="/assets/images/logo/rackid.png" alt="logo" style="width: 60%;">
+                            <img src="{{ asset('/assets/images/logo/rackid.png') }}" alt="logo" style="width: 60%;">
                         </a>
                         <p class="disc">
                             Dirancang dengan presisi untuk menghadirkan stabilitas, efisiensi, dan performa terbaik bagi
@@ -22,7 +22,7 @@
                     <div class="footer-one-single-wized">
                         <div class="wized-title">
                             <h5 class="title">Akses Cepat</h5>
-                            <img src="/assets/images/footer/under-title.png" alt="finbiz_footer">
+                            <img src="{{ asset('/assets/images/footer/under-title.png ') }}" alt="finbiz_footer">
                         </div>
                         <div class="quick-link-inner">
                             <ul class="links">
@@ -45,7 +45,7 @@
                     <div class="footer-one-single-wized">
                         <div class="wized-title">
                             <h5 class="title">Hubungi Kami Sekarang</h5>
-                            <img src="/assets/images/footer/under-title.png" alt="finbiz_footer">
+                            <img src="{{ asset('/assets/images/footer/under-title.png') }}" alt="finbiz_footer">
                         </div>
                         <div class="quick-link-inner d-block">
                             <div class="signle-footer-contact-8">

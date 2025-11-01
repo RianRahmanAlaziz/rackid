@@ -25,7 +25,7 @@
                     <div class="header-main-one-wrapper">
                         <div class="thumbnail">
                             <a href="/">
-                                <img src="assets/images/logo/rack.id.png" alt="finbiz-logo">
+                                <img src="{{ asset('/assets/images/logo/rack.id.png') }}" alt="finbiz-logo">
                             </a>
                         </div>
                         <div class="main-header">
@@ -112,7 +112,8 @@
                                 </button>
 
                                 <button id="menu-btn" aria-label="Menu" class="menu-btn menu ml--20 ml_sm--5">
-                                    <img src="assets/images/icons/01.svg" alt="Menu icon" class="menu-icon">
+                                    <img src="{{ asset('/assets/images/icons/01.svg') }}" alt="Menu icon"
+                                        class="menu-icon">
                                 </button>
 
                             </div>

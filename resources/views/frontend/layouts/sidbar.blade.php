@@ -2,7 +2,7 @@
         <button class="close-icon-menu" title="Close menu"><i class="far fa-times"></i></button>
         <!-- inner menu area desktop start -->
         <div class="rts-sidebar-menu-desktop">
-            <a class="logo-1" href="index.html"><img class="logo" src="assets/images/logo/rack.id.png"
+            <a class="logo-1" href="index.html"><img class="logo" src="{{ asset('/assets/images/logo/rack.id.png') }}"
                     alt="finbiz_logo"></a>
             <div class="body d-none d-xl-block">
                 <p class="disc">
