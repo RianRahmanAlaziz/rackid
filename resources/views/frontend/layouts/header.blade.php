@@ -6,12 +6,8 @@
                     <div class="header-top-one-wrapper">
                         <div class="left" style="padding: 10px 0; border: none;">
                             <div class="mail" style="border: none; padding: 5px 0;">
-                                <a href="mailto:customercare@rack.id" style="text-decoration: none; color: #333;">
-                                    customercare@rack.id
-                                </a>
                             </div>
                             <div class="working-time" style="border: none; padding: 5px 0;">
-                                <p style="margin: 0; color: #333;">Working: 8.00am - 5.00pm</p>
                             </div>
                         </div>
                     </div>
