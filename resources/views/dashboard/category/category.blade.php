@@ -25,6 +25,7 @@
                     <tr>
                         <th class="whitespace-nowrap">CATEGORY NAME</th>
                         <th class="whitespace-nowrap">PARENT CATEGORY </th>
+                        <th class="whitespace-nowrap text-center"> ORDER </th>
                         <th class="text-center whitespace-nowrap">ACTIONS</th>
                     </tr>
                 </thead>
@@ -32,7 +33,7 @@
                     @forelse ($categories as $category)
                         <tr class="intro-x">
                             <td>
-                                <a href="" class="font-medium whitespace-nowrap">{{ $category->name }}</a>
+                                <div class="font-medium whitespace-nowrap">{{ $category->name }}</div>
                                 <div class="text-slate-500 text-xs whitespace-nowrap mt-0.5">
                                     @if ($category->parent)
                                         Parent: {{ $category->getParentChain() }}
@@ -42,13 +43,18 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="" class="font-medium whitespace-nowrap">
+                                <div class="font-medium whitespace-nowrap">
                                     @if ($category->parent)
                                         {{ $category->getParentChain() }}
                                     @else
                                         No Parent
                                     @endif
-                                </a>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="font-medium whitespace-nowrap text-center">
+                                    {{ $category->order }}
+                                </div>
                             </td>
                             <td class="table-report__action w-56">
                                 <div class="flex justify-center items-center">
@@ -65,7 +71,7 @@
                         </tr>
                     @empty
                         <tr>
-                            <td colspan="3" class="text-center">No Categories Available</td>
+                            <td colspan="4" class="text-center">No Categories Available</td>
                         </tr>
                     @endforelse
                 </tbody>

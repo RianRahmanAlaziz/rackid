@@ -19,52 +19,68 @@
                 </div>
             </div>
             <div class="shape-area">
-                <img src="assets/images/about/shape/01.png" alt="shape" class="one">
-                <img src="assets/images/about/shape/02.png" alt="shape" class="two">
-                <img src="assets/images/about/shape/03.png" alt="shape" class="three">
+                <img src="/assets/images/about/shape/01.png" alt="shape" class="one">
+                <img src="/assets/images/about/shape/02.png" alt="shape" class="two">
+                <img src="/assets/images/about/shape/03.png" alt="shape" class="three">
             </div>
         </div>
         <!-- rts document download area start -->
         <div class="rts-document-area rts-section-gapBottom mt-dec-section-inner with-pricing">
             <div class="container">
                 <div class="row g-4">
-                    <!-- single document card -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="document-card text-center p-4 border rounded shadow-sm">
-                            <div class="icon mb-3">
-                                <i class="fa-regular fa-file-pdf fa-3x text-primary"></i>
-                            </div>
-                            <h4 class="doc-title">Brosur Produk</h4>
-                            <p class="doc-desc">Informasi lengkap tentang produk dan solusi RackID.</p>
-                            <a href="assets/docs/brosur.pdf" class="rts-btn btn-primary mt-3" download>Unduh PDF</a>
-                        </div>
-                    </div>
 
-                    <!-- single document card -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="document-card text-center p-4 border rounded shadow-sm">
-                            <div class="icon mb-3">
-                                <i class="fa-regular fa-file-pdf fa-3x text-primary"></i>
+                    @forelse ($files as $item)
+                        <!-- single document card -->
+                        <div class="col-lg-4 col-md-6">
+                            <div class="document-card text-center p-4 border rounded shadow-sm">
+                                <div class="icon mb-3">
+                                    <i class="fa-regular fa-file-pdf fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="doc-title">Brosur Produk {{ $item->nfile }}</h4>
+                                <p class="doc-desc">Informasi lengkap tentang produk dan solusi RackID.</p>
+                                <a href="/assets/document/{{ $item->file }}" class="rts-btn btn-primary mt-3"
+                                    download>Unduh
+                                    PDF</a>
                             </div>
-                            <h4 class="doc-title">Brosur Produk</h4>
-                            <p class="doc-desc">Informasi lengkap tentang produk dan solusi RackID.</p>
-                            <a href="assets/docs/brosur.pdf" class="rts-btn btn-primary mt-3" download>Unduh PDF</a>
                         </div>
-                    </div>
+                    @empty
+                        <div class="col-12 text-center my-5">
+                            <p class="text-muted">Belum ada Dokument yang tersedia.</p>
+                        </div>
+                    @endforelse
+                </div>
+            </div>
+            @if ($files->hasPages())
+                <div class="row">
+                    <div class="col-12">
+                        <div class="text-center">
+                            <div class="pagination">
+                                {{-- Tombol halaman --}}
+                                @for ($i = 1; $i <= $files->lastPage(); $i++)
+                                    @if ($i == $files->currentPage())
+                                        <button class="active">
+                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                        </button>
+                                    @else
+                                        <button onclick="window.location.href='{{ $files->url($i) }}'">
+                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                                        </button>
+                                    @endif
+                                @endfor
 
-                    <!-- single document card -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="document-card text-center p-4 border rounded shadow-sm">
-                            <div class="icon mb-3">
-                                <i class="fa-regular fa-file-pdf fa-3x text-primary"></i>
+                                {{-- Tombol next --}}
+                                @if ($files->hasMorePages())
+                                    <a href="{{ $files->nextPageUrl() }}">
+                                        <button><i class="fal fa-angle-double-right"></i></button>
+                                    </a>
+                                @else
+                                    <button disabled><i class="fal fa-angle-double-right"></i></button>
+                                @endif
                             </div>
-                            <h4 class="doc-title">Brosur Produk</h4>
-                            <p class="doc-desc">Informasi lengkap tentang produk dan solusi RackID.</p>
-                            <a href="assets/docs/brosur.pdf" class="rts-btn btn-primary mt-3" download>Unduh PDF</a>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endif
         </div>
         <!-- rts document download area end -->
     @endsection

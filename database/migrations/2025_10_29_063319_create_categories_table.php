@@ -20,6 +20,7 @@ return new class extends Migration
                 ->constrained('categories')
                 ->cascadeOnDelete()
                 ->comment('ID kategori induk, nullable jika tidak memiliki induk');
+            $table->string('order');
             $table->timestamps();
         });
     }

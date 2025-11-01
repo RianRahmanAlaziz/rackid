@@ -19,6 +19,7 @@ class BannerController extends Controller
         if ($request->filled('search')) {
             $query->where('title', 'like', '%' . $request->search . '%');
         }
+        $query->orderBy('order', 'asc');
 
         // Urutkan berdasarkan order ASC, lalu created_at DESC
         $banners = $query->orderBy('order', 'asc')

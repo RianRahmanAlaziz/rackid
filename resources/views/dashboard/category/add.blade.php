@@ -33,8 +33,16 @@
                     </div>
 
                     <div class="col-span-12">
-                        <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Slug</label>
+                        <label for="slug" class="block text-sm font-medium text-gray-700 mb-2">Slug</label>
                         <input id="slug" name="slug" type="text" class="form-control" readonly>
+                    </div>
+                    <div class="col-span-12">
+                        <label for="order" class="block text-sm font-medium text-gray-700 mb-2">Slug</label>
+                        <input id="order" name="order" type="number" min="0" class="form-control"
+                            placeholder="Contoh: 1" value="{{ old('order', 0) }}">
+                        @error('order')
+                            <div class="text-danger form-help text-left">{{ $message }}</div>
+                        @enderror
                     </div>
 
                     <!-- Parent Category Field -->

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Dokument;
 use App\Models\Gallery;
 use App\Models\Product;
 use Illuminate\Http\Request;
@@ -21,6 +22,7 @@ class FrontendController extends Controller
     {
         return view('frontend.aboutus.aboutus', [
             'title' => 'About Us',
+            'categories' => Category::all()
         ]);
     }
 
@@ -84,20 +86,39 @@ class FrontendController extends Controller
             'title' => 'Detail Produk',
             'products' => $products,
             'product' => $relatedProducts,
+            'categories' => Category::all()
         ]);
     }
 
-    public function brosur()
+    public function brosur(Request $request)
     {
+        $query = Dokument::where('category', 'brosur');
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('nfile', 'like', "%{$search}%");
+        }
+        $file = $query->paginate(3);
         return view('frontend.brosur.brosur', [
             'title' => 'Brosur',
+            'categories' => Category::all(),
+            'files' =>  $file
         ]);
     }
 
-    public function datasheet()
+    public function datasheet(Request $request)
     {
+        $query = Dokument::where('category', 'datasheet');
+
+        if ($request->has('search')) {
+            $search = $request->input('search');
+            $query->where('nfile', 'like', "%{$search}%");
+        }
+        $file = $query->paginate(3);
         return view('frontend.datasheet.datasheet', [
             'title' => 'Datasheet',
+            'categories' => Category::all(),
+            'files' =>  $file
         ]);
     }
 
@@ -114,6 +135,7 @@ class FrontendController extends Controller
         return view('frontend.media.media_foto', [
             'title' => 'Media Foto',
             'image' => $image,
+            'categories' => Category::all()
         ]);
     }
 
@@ -130,6 +152,7 @@ class FrontendController extends Controller
         return view('frontend.media.media_video', [
             'title' => 'Media Video',
             'image' => $image,
+            'categories' => Category::all()
         ]);
     }
 
@@ -137,6 +160,7 @@ class FrontendController extends Controller
     {
         return view('frontend.contactus.contactus', [
             'title' => 'Contact Us',
+            'categories' => Category::all()
         ]);
     }
 }

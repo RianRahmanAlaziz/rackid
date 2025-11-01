@@ -20,6 +20,7 @@ class CategoryController extends Controller
             $search = $request->input('search');
             $query->where('name', 'like', "%{$search}%");
         }
+        $query->orderBy('order', 'asc');
 
         $categories = $query->get();
 
@@ -95,8 +96,10 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'slug' => 'required|unique:categories',
             'parent_id' => 'nullable|exists:categories,id', // Validasi parent_id harus ada di tabel categories
+            'order'         => 'nullable|integer|min:0',
         ]);
 
+        $validated['order']  = $request->input('order', 0);
         Category::create($validated);
 
         return redirect()->back()->with('success', 'Category created successfully.');
@@ -127,6 +130,7 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'slug' => 'nullable',
             'parent_id' => 'nullable|exists:categories,id',
+            'order'         => 'nullable|integer|min:0',
         ]);
 
         try {
