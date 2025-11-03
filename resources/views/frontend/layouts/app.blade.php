@@ -116,13 +116,13 @@
     <div class="search-input-area">
         <div class="container">
             <div class="search-input-inner">
-                <form action="{{ url('/produk') }}" method="GET" class="search-form">
-                    <div class="input-div">
+                <div class="input-div">
+                    <form action="{{ url('/produk') }}" method="GET" class="search-form">
                         <input class="search-input autocomplete" type="text" name="search"
                             placeholder="Search by keyword or #" value="{{ request('search') }}">
                         <button type="submit"><i class="far fa-search"></i></button>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
         <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
