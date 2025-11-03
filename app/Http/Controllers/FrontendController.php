@@ -90,19 +90,19 @@ class FrontendController extends Controller
         $metaDescription = "{$productName} dari {$brand} – solusi rak server berkualitas tinggi untuk kebutuhan jaringan dan infrastruktur digital Anda. Tersedia berbagai ukuran dan fitur sesuai kebutuhan.";
         $metaKeywords = strtolower("{$productName}, rack.id, PT Inti Kreasi Network, rack server, standing rack, wallmount rack, open wallmount, wallmount folding, aksesoris rak, rack server indonesia");
 
-        // === Custom SEO Berdasarkan Jenis Produk ===
+        // === Custom SEO Berdasarkan Jenis Produk (urutan penting!) ===
         if (stripos($productName, 'wallmount folding') !== false) {
             $metaTitle = "Wallmount Folding Rack - {$brand} | Rak Lipat Efisien";
             $metaDescription = "Wallmount Folding Rack dari {$brand} dirancang fleksibel dan hemat ruang, ideal untuk instalasi jaringan dan perangkat ringan.";
+        } elseif (stripos($productName, 'open wallmount') !== false || stripos($productName, 'open') !== false) {
+            $metaTitle = "Open Wallmount Rack - {$brand} | Akses Mudah & Sirkulasi Optimal";
+            $metaDescription = "Open Wallmount Rack dari {$brand} memiliki sirkulasi udara baik dan kemudahan akses perawatan perangkat.";
         } elseif (stripos($productName, 'wallmount') !== false) {
             $metaTitle = "Wallmount Rack - {$brand} | Solusi Rak Dinding Praktis";
             $metaDescription = "Wallmount Rack dari {$brand} memberikan solusi pemasangan perangkat jaringan dengan desain kokoh dan mudah diakses.";
         } elseif (stripos($productName, 'standing') !== false || stripos($productName, 'close rack') !== false) {
             $metaTitle = "Standing Close Rack - {$brand} | Rak Server Aman & Tertutup";
             $metaDescription = "Standing Close Rack dari {$brand} memberikan perlindungan maksimal untuk server dengan desain elegan dan ventilasi optimal.";
-        } elseif (stripos($productName, 'open') !== false) {
-            $metaTitle = "Open Wallmount Rack - {$brand} | Akses Mudah & Sirkulasi Optimal";
-            $metaDescription = "Open Wallmount Rack dari {$brand} memiliki sirkulasi udara baik dan kemudahan akses perawatan perangkat.";
         } elseif (stripos($productName, 'aksesori') !== false || stripos($productName, 'accessories') !== false) {
             $metaTitle = "Aksesoris Rak - {$brand} | Pelengkap Instalasi IT";
             $metaDescription = "Aksesoris rak server dari {$brand} mendukung efisiensi instalasi – mulai dari tray, fan, hingga manajemen kabel.";
@@ -119,6 +119,7 @@ class FrontendController extends Controller
             'metaKeywords' => $metaKeywords,
         ]);
     }
+
 
 
     // public function detail_produk($slug)
