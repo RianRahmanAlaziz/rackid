@@ -56,7 +56,7 @@ class FrontendController extends Controller
             $query->where('productname', 'like', "%{$search}%");
         }
 
-        $products = $query->paginate(5);
+        $products = $query->paginate(6);
 
 
         $categories = Category::with('children')
