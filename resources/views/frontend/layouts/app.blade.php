@@ -4,8 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href={{ asset('/assets/images/icon.png') }}>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/assets/images/icon.png') }}">
+
+    <!-- Title -->
     <title>Rackid | {{ $title }}</title>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    <!-- ✅ Google Search Console Verification -->
+    <meta name="google-site-verification" content="75XhdhDzPkta-hZJvWieSaqF5mCmLnImh1qi_0j9KrA" />
+
+    <!-- Styles -->
     <link rel="stylesheet preload" href="{{ asset('/assets/css/plugins/fontawesome.css') }}" as="style">
     <link rel="stylesheet preload" href="{{ asset('/assets/css/plugins/swiper.css') }}" as="style">
     <link rel="stylesheet preload" href="{{ asset('/assets/css/plugins/metismenu.css') }}" as="style">
@@ -20,18 +32,30 @@
     <link rel="stylesheet" href="{{ asset('/assets/scss/elements/_search.css') }}">
     <link rel="stylesheet" href="{{ asset('/assets/scss/elements/_about.css') }}">
 
-
-
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap"
         rel="stylesheet preload" as="style">
+
     <link rel="stylesheet" href="{{ asset('/assets/css/style.css') }}">
     <link rel="preload" as="image" href="{{ asset('/assets/images/banner/21.webp') }}" as="image">
 
+    <!-- ✅ Google Analytics (GA4) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1JJESJM8Z5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-1JJESJM8Z5');
+    </script>
 </head>
+
 
 <body>
 
