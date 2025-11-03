@@ -1,4 +1,9 @@
 @extends('frontend.layouts.app')
+@section('title', 'Hubungi Kami - PT. Inti Kreasi Network | Rack.ID')
+@section('meta_description', 'Hubungi Rack.ID untuk konsultasi, pemesanan, atau informasi produk rak server seperti
+    Standing Close Rack, Wallmount Rack, Wallmount Folding, Open Wallmount, dan Aksesoris Rak.')
+@section('meta_keywords', 'hubungi rack.id, kontak PT Inti Kreasi Network, kontak rack server, customer service rack.id,
+    standing close rack, wallmount rack, open wallmount, wallmount folding, aksesoris rak, support rack server Indonesia')
 @section('container')
     <div class="rts-breadcrumb-area">
         <div class="container">

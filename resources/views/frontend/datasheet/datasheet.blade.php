@@ -1,4 +1,11 @@
    @extends('frontend.layouts.app')
+   @section('title', 'Datasheet Produk - PT. Inti Kreasi Network | Rack.ID')
+   @section('meta_description',
+       'Lihat dan unduh datasheet resmi Rack.ID untuk detail teknis produk seperti Standing
+       Close Rack, Wallmount Rack, Wallmount Folding, Open Wallmount, dan Aksesoris Rak.')
+   @section('meta_keywords',
+       'datasheet rack.id, datasheet rack server, spesifikasi rack server, PT Inti Kreasi Network,
+       standing close rack, wallmount rack, open wallmount, wallmount folding, aksesoris rak, rack server Indonesia')
    @section('container')
        <div class="rts-breadcrumb-area pb--200">
            <div class="container">

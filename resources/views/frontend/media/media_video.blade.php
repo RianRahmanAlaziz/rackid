@@ -1,4 +1,11 @@
 @extends('frontend.layouts.app')
+@section('title', 'Media Video - PT. Inti Kreasi Network | Rack.ID')
+@section('meta_description',
+    'Tonton koleksi media video Rack.ID yang menampilkan produk seperti Standing Close Rack,
+    Wallmount Rack, Wallmount Folding, Open Wallmount, dan Aksesoris Rak dalam berbagai aplikasi nyata.')
+@section('meta_keywords',
+    'media video rack.id, video produk rack server, PT Inti Kreasi Network, standing close rack,
+    wallmount rack, open wallmount, wallmount folding, aksesoris rak, video rack server Indonesia')
 @section('container')
     <!-- partners area breadcrumb area wrapper -->
     <div class="partner-breadcrumb bg_image"
