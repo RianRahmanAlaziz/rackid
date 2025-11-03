@@ -100,7 +100,7 @@
     @include('frontend.layouts.footer')
     @include('frontend.layouts.sidbar')
     <!-- offcanvase search -->
-    <div class="search-input-area">
+    {{-- <div class="search-input-area">
         <div class="container">
             <div class="search-input-inner">
                 <div class="input-div">
@@ -112,7 +112,25 @@
         <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
     </div>
     <div id="anywhere-home" class="">
+    </div> --}}
+
+    <div class="search-input-area" id="search-box">
+        <div class="container">
+            <div class="search-input-inner">
+                <div class="input-div">
+                    <input id="search-input" class="search-input autocomplete" type="text"
+                        placeholder="Search by keyword or #">
+                    <button id="search-button"><i class="far fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+        <div id="close" class="search-close-icon">
+            <i class="far fa-times"></i>
+        </div>
     </div>
+
+    <div id="anywhere-home"></div>
+
 
     <!-- progress area start -->
     <div class="whatsapp-cta">
@@ -135,6 +153,47 @@
     <script defer src="{{ asset('/assets/js/plugins/swiper.js') }}"></script>
     <script defer src="{{ asset('/assets/js/plugins/contact.form.js') }}"></script>
     <script defer src="{{ asset('/assets/js/main.js') }}"></script>
+
+
+    <script>
+        const searchBox = document.getElementById("search-box");
+        const searchInput = document.getElementById("search-input");
+        const searchButton = document.getElementById("search-button");
+        const closeSearch = document.getElementById("close");
+        const overlay = document.getElementById("anywhere-home");
+
+        // buka search (bisa di-trigger dari tombol di navbar)
+        document.querySelectorAll(".open-search").forEach(btn => {
+            btn.addEventListener("click", () => {
+                searchBox.classList.add("active");
+                searchInput.focus();
+            });
+        });
+
+        // tutup search
+        closeSearch.addEventListener("click", () => searchBox.classList.remove("active"));
+        overlay.addEventListener("click", () => searchBox.classList.remove("active"));
+
+        // klik tombol search → redirect ke /produk?search=...
+        searchButton.addEventListener("click", () => {
+            const keyword = searchInput.value.trim();
+            if (keyword) {
+                window.location.href = `/produk?search=${encodeURIComponent(keyword)}`;
+            }
+        });
+
+        // tekan enter di input → sama efeknya
+        searchInput.addEventListener("keypress", (e) => {
+            if (e.key === "Enter") {
+                e.preventDefault();
+                const keyword = searchInput.value.trim();
+                if (keyword) {
+                    window.location.href = `/produk?search=${encodeURIComponent(keyword)}`;
+                }
+            }
+        });
+    </script>
+
 
 </body>
 
