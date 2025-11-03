@@ -1,11 +1,7 @@
     @extends('frontend.layouts.app')
-    @section('title', '{{ $products->productname }} - PT. Inti Kreasi Network | Rack.ID')
-    @section('meta_description',
-        '{{ $products->productname }} dari Rack.ID – solusi rak server profesional untuk
-        kebutuhan jaringan dan infrastruktur IT Anda. Tersedia berbagai ukuran dan fitur sesuai kebutuhan.')
-    @section('meta_keywords',
-        '{{ $products->productname }}, rack.id, PT Inti Kreasi Network, rack server, standing
-        rack, wallmount rack, open wallmount, wallmount folding, aksesoris rak, rack server Indonesia')
+    @section('title', $metaTitle)
+    @section('meta_description', $metaDescription)
+    @section('meta_keywords', $metaKeywords)
     @section('container')
         <div class="partner-breadcrumb bg_image"
             style="background-image: url('/assets/images/banner/heading_produk.png'); 
