@@ -1,4 +1,12 @@
 @extends('frontend.layouts.app')
+@section('title', 'Tentang Kami - PT. Inti Kreasi Network | Rack.ID')
+@section('meta_description',
+    'Rack.ID – Mitra terpercaya untuk solusi rak server dan infrastruktur digital. Kami
+    menghadirkan produk berkualitas tinggi dengan layanan profesional dan inovasi berkelanjutan untuk mendukung efisiensi
+    bisnis Anda di era transformasi digital.')
+@section('meta_keywords',
+    'tentang rack.id, PT Inti Kreasi Network, perusahaan rack server, solusi infrastruktur
+    digital, standing rack, wallmount rack, wallmount folding, open wallmount, aksesoris rak, rack server Indonesia')
 @section('container')
     <!-- about us area wrapper main -->
     <div class="rts-breadcrumb-area">

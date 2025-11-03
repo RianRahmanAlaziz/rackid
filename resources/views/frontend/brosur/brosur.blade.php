@@ -1,4 +1,11 @@
     @extends('frontend.layouts.app')
+    @section('title', 'Brosur Produk - PT. Inti Kreasi Network | Rack.ID')
+    @section('meta_description',
+        'Unduh brosur resmi Rack.ID dan temukan berbagai solusi rak server terbaik seperti
+        Standing Close Rack, Wallmount Rack, Wallmount Folding, Open Wallmount, dan Aksesoris Rak untuk kebutuhan IT Anda.')
+    @section('meta_keywords',
+        'brosur rack.id, brosur rack server, PT Inti Kreasi Network, standing close rack,
+        wallmount rack, open wallmount, wallmount folding, aksesoris rak, download brosur, katalog rack server Indonesia')
     @section('container')
         <!-- about us area wrapper main -->
         <div class="rts-breadcrumb-area pb--200">
