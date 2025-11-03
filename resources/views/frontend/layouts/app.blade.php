@@ -100,28 +100,12 @@
     @include('frontend.layouts.footer')
     @include('frontend.layouts.sidbar')
     <!-- offcanvase search -->
-    {{-- <div class="search-input-area">
+    <div class="search-input-area">
         <div class="container">
             <div class="search-input-inner">
                 <div class="input-div">
                     <input class="search-input autocomplete" type="text" placeholder="Search by keyword or #">
                     <button><i class="far fa-search"></i></button>
-                </div>
-            </div>
-        </div>
-        <div id="close" class="search-close-icon"><i class="far fa-times"></i></div>
-    </div>
-    <div id="anywhere-home" class="">
-    </div> --}}
-    <div class="search-input-area">
-        <div class="container">
-            <div class="search-input-inner">
-                <div class="input-div">
-                    <form action="{{ url('/produk') }}" method="GET" class="search-form">
-                        <input class="search-input autocomplete" type="text" name="search"
-                            placeholder="Search by keyword or #" value="{{ request('search') }}">
-                        <button type="submit"><i class="far fa-search"></i></button>
-                    </form>
                 </div>
             </div>
         </div>
