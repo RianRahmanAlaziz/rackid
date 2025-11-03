@@ -57,6 +57,36 @@
         gtag('js', new Date());
         gtag('config', 'G-1JJESJM8Z5');
     </script>
+    <script>
+        // 🚫 Nonaktifkan Klik Kanan
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // 🚫 Nonaktifkan Shortcut Developer Tools
+        document.addEventListener('keydown', event => {
+            if (
+                event.key === "F12" ||
+                (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "i") ||
+                (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === "j") ||
+                (event.ctrlKey && event.key.toLowerCase() === "u") ||
+                (event.ctrlKey && event.key.toLowerCase() === "s")
+            ) {
+                event.preventDefault();
+                event.stopPropagation();
+                return false;
+            }
+        });
+
+        // 🚫 (Opsional) Deteksi Open DevTools
+        setInterval(() => {
+            const before = new Date().getTime();
+            debugger;
+            const after = new Date().getTime();
+            if (after - before > 100) {
+                document.body.innerHTML =
+                    "<h3 style='text-align:center;margin-top:20%;font-family:sans-serif;'>🚫 Developer Tools tidak diperbolehkan.</h3>";
+            }
+        }, 1000);
+    </script>
 </head>
 
 
