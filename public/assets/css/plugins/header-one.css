@@ -413,3 +413,25 @@
 .working-time {
     border: none !important;
 }
+
+
+
+/* Efek zoom di hover */
+.swiper-slide .slider-inner {
+    overflow: hidden;
+    /* supaya gambar tidak keluar area */
+    border-radius: 10px;
+    /* opsional */
+}
+
+.swiper-slide .slider-inner img {
+    transition: transform 0.4s ease, filter 0.3s ease;
+    cursor: zoom-in;
+}
+
+.swiper-slide:hover .slider-inner img {
+    transform: scale(1.2);
+    /* perbesar 20% */
+    filter: brightness(1.05);
+    /* sedikit lebih cerah */
+}
