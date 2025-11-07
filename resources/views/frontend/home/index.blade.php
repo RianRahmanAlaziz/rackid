@@ -23,6 +23,11 @@
                         <img src="assets/images/banner/wallmount Folding.jpg" alt="Banner 3" class="banner-main-img">
                     </div>
                 </div>
+                <div class="swiper-slide">
+                    <div class="banner-slide">
+                        <img src="assets/images/banner/wallmount_banner.jpg" alt="Banner 4" class="banner-main-img">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
