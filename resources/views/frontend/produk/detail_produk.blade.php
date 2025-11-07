@@ -39,15 +39,15 @@
                                         $mainVideos = array_slice($urls, 0, 2);
                                         $carouselItems = array_merge($mainImages, $mainVideos);
                                     @endphp
+
                                     @foreach ($mainImages as $index => $image)
                                         <div class="swiper-slide">
                                             <div class="slider-inner">
                                                 <img src="{{ asset('/assets/images/product/' . $image) }}"
-                                                    alt="full_screen-image">
+                                                    alt="{{ $products->productname }} image {{ $index + 1 }}">
                                             </div>
                                         </div>
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
