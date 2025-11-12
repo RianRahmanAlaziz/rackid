@@ -1,8 +1,10 @@
 @extends('frontend.layouts.app')
 @section('title', 'Hubungi Kami - PT. Inti Kreasi Network | Rack.ID')
-@section('meta_description', 'Hubungi Rack.ID untuk konsultasi, pemesanan, atau informasi produk rak server seperti
+@section('meta_description',
+    'Hubungi Rack.ID untuk konsultasi, pemesanan, atau informasi produk rak server seperti
     Standing Close Rack, Wallmount Rack, Wallmount Folding, Open Wallmount, dan Aksesoris Rak.')
-@section('meta_keywords', 'hubungi rack.id, kontak PT Inti Kreasi Network, kontak rack server, customer service rack.id,
+@section('meta_keywords',
+    'hubungi rack.id, kontak PT Inti Kreasi Network, kontak rack server, customer service rack.id,
     standing close rack, wallmount rack, open wallmount, wallmount folding, aksesoris rak, support rack server Indonesia')
 @section('container')
     <div class="rts-breadcrumb-area">
@@ -19,9 +21,9 @@
             </div>
         </div>
         <div class="shape-area">
-            <img src="assets/images/about/shape/01.png" alt="shape" class="one">
-            <img src="assets/images/about/shape/02.png" alt="shape" class="two">
-            <img src="assets/images/about/shape/03.png" alt="shape" class="three">
+            <img src="assets/images/about/shape/bg_about1.png" alt="shape" class="one">
+            <img src="assets/images/about/shape/bg_about02.png " alt="shape" class="two">
+            <img src="assets/images/about/shape/bg_05.png" alt="shape" class="three">
         </div>
     </div>
 
