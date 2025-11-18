@@ -28,39 +28,35 @@ class FrontendController extends Controller
 
     public function produk(Request $request)
     {
-        $query = Product::with('category'); // Eager loading kategori
+        $query = Product::with('category');
 
-        // Filter berdasarkan kategori (termasuk parent dan child categories)
         if ($request->has('category') && !empty($request->input('category'))) {
             $categorySlug = $request->input('category');
-
-            // Ambil kategori parent berdasarkan slug
             $ctr = Category::where('slug', $categorySlug)->first();
 
             if ($ctr) {
-                // Ambil semua ID kategori parent dan child-nya
-                $categoryIds = collect([$ctr->id]); // Tambahkan ID kategori parent
-                $childCategoryIds = $ctr->children->pluck('id'); // Ambil ID kategori anak-anaknya
-                $categoryIds = $categoryIds->merge($childCategoryIds); // Gabungkan ID parent dan child categories
+                $categoryIds = collect([$ctr->id]);
+                $childCategoryIds = $ctr->children->pluck('id');
+                $categoryIds = $categoryIds->merge($childCategoryIds);
 
-                // Filter produk berdasarkan ID kategori parent dan child-nya
                 $query->whereHas('category', function ($q) use ($categoryIds) {
                     $q->whereIn('id', $categoryIds);
                 });
             }
         }
 
-        // Filter berdasarkan pencarian
         if ($request->has('search') && !empty($request->input('search'))) {
             $search = $request->input('search');
             $query->where('productname', 'like', "%{$search}%");
         }
 
+        // ⬇️ Tambahkan ini agar produk muncul berdasarkan update terbaru
+        $query->orderBy('updated_at', 'desc');
+
         $products = $query->paginate(6);
 
-
         $categories = Category::with('children')
-            ->whereNull('parent_id') // hanya parent categories
+            ->whereNull('parent_id')
             ->get();
 
         return view('frontend.produk.produk', [
@@ -72,6 +68,7 @@ class FrontendController extends Controller
             'categories' => $categories,
         ]);
     }
+
 
     public function detail_produk($slug)
     {
