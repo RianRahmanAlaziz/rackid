@@ -104,12 +104,35 @@
                     <div class="col-12">
                         <div class="text-center">
                             <div class="pagination">
-                                {{-- Tombol halaman --}}
-                                @for ($i = 1; $i <= $products->lastPage(); $i++)
-                                    @if ($i == $products->currentPage())
-                                        <button class="active">
-                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                                        </button>
+
+                                {{-- Previous --}}
+                                @if ($products->onFirstPage())
+                                    <button disabled><i class="fal fa-angle-double-left"></i></button>
+                                @else
+                                    <button onclick="window.location.href='{{ $products->previousPageUrl() }}'">
+                                        <i class="fal fa-angle-double-left"></i>
+                                    </button>
+                                @endif
+
+                                @php
+                                    $current = $products->currentPage();
+                                    $last = $products->lastPage();
+                                    $start = max(1, $current - 1);
+                                    $end = min($last, $current + 1);
+                                @endphp
+
+                                {{-- Page 1 --}}
+                                @if ($start > 1)
+                                    <button onclick="window.location.href='{{ $products->url(1) }}'">01</button>
+                                    @if ($start > 2)
+                                        <button disabled>...</button>
+                                    @endif
+                                @endif
+
+                                {{-- Middle Pages --}}
+                                @for ($i = $start; $i <= $end; $i++)
+                                    @if ($i == $current)
+                                        <button class="active">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</button>
                                     @else
                                         <button onclick="window.location.href='{{ $products->url($i) }}'">
                                             {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
@@ -117,19 +140,31 @@
                                     @endif
                                 @endfor
 
-                                {{-- Tombol next --}}
+                                {{-- Last page --}}
+                                @if ($end < $last)
+                                    @if ($end < $last - 1)
+                                        <button disabled>...</button>
+                                    @endif
+                                    <button onclick="window.location.href='{{ $products->url($last) }}'">
+                                        {{ str_pad($last, 2, '0', STR_PAD_LEFT) }}
+                                    </button>
+                                @endif
+
+                                {{-- Next --}}
                                 @if ($products->hasMorePages())
-                                    <a href="{{ $products->nextPageUrl() }}">
-                                        <button><i class="fal fa-angle-double-right"></i></button>
-                                    </a>
+                                    <button onclick="window.location.href='{{ $products->nextPageUrl() }}'">
+                                        <i class="fal fa-angle-double-right"></i>
+                                    </button>
                                 @else
                                     <button disabled><i class="fal fa-angle-double-right"></i></button>
                                 @endif
+
                             </div>
                         </div>
                     </div>
                 </div>
             @endif
+
         </div>
 
     </div>
