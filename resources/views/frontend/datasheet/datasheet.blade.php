@@ -41,7 +41,7 @@
                                <div class="icon mb-3">
                                    <i class="fa-regular fa-file-pdf fa-3x text-primary"></i>
                                </div>
-                               <h4 class="doc-title">Datasheet Teknis {{ $item->nfile }}</h4>
+                               <h4 class="doc-title">Datasheet {{ $item->nfile }}</h4>
                                <p class="doc-desc">Spesifikasi teknis lengkap untuk produk RackID.</p>
                                <a href="/assets/document/{{ $item->file }}" class="rts-btn btn-primary mt-3"
                                    download>Unduh

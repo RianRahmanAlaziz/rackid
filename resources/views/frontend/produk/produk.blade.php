@@ -164,12 +164,8 @@
                     </div>
                 </div>
             @endif
-
         </div>
-
     </div>
-
-
     <script>
         document.querySelectorAll('.accordion-header').forEach(header => {
             header.addEventListener('click', () => {
