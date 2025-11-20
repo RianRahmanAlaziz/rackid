@@ -160,7 +160,7 @@ class FrontendController extends Controller
             $search = $request->input('search');
             $query->where('nfile', 'like', "%{$search}%");
         }
-        $file = $query->paginate(3);
+        $file = $query->paginate(6);
         return view('frontend.datasheet.datasheet', [
             'title' => 'Datasheet',
             'categories' => Category::all(),

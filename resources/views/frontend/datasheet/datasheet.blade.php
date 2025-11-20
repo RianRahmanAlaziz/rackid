@@ -61,12 +61,35 @@
                    <div class="col-12">
                        <div class="text-center">
                            <div class="pagination">
-                               {{-- Tombol halaman --}}
-                               @for ($i = 1; $i <= $files->lastPage(); $i++)
-                                   @if ($i == $files->currentPage())
-                                       <button class="active">
-                                           {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                                       </button>
+
+                               {{-- Previous --}}
+                               @if ($files->onFirstPage())
+                                   <button disabled><i class="fal fa-angle-double-left"></i></button>
+                               @else
+                                   <button onclick="window.location.href='{{ $files->previousPageUrl() }}'">
+                                       <i class="fal fa-angle-double-left"></i>
+                                   </button>
+                               @endif
+
+                               @php
+                                   $current = $files->currentPage();
+                                   $last = $files->lastPage();
+                                   $start = max(1, $current - 1);
+                                   $end = min($last, $current + 1);
+                               @endphp
+
+                               {{-- Page 1 --}}
+                               @if ($start > 1)
+                                   <button onclick="window.location.href='{{ $files->url(1) }}'">01</button>
+                                   @if ($start > 2)
+                                       <button disabled>...</button>
+                                   @endif
+                               @endif
+
+                               {{-- Middle Pages --}}
+                               @for ($i = $start; $i <= $end; $i++)
+                                   @if ($i == $current)
+                                       <button class="active">{{ str_pad($i, 2, '0', STR_PAD_LEFT) }}</button>
                                    @else
                                        <button onclick="window.location.href='{{ $files->url($i) }}'">
                                            {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
@@ -74,14 +97,27 @@
                                    @endif
                                @endfor
 
-                               {{-- Tombol next --}}
-                               @if ($files->hasMorePages())
-                                   <a href="{{ $files->nextPageUrl() }}">
-                                       <button><i class="fal fa-angle-double-right"></i></button>
-                                   </a>
-                               @else
-                                   <button disabled><i class="fal fa-angle-double-right"></i></button>
+                               {{-- Last Page --}}
+                               @if ($end < $last)
+                                   @if ($end < $last - 1)
+                                       <button disabled>...</button>
+                                   @endif
+                                   <button onclick="window.location.href='{{ $files->url($last) }}'">
+                                       {{ str_pad($last, 2, '0', STR_PAD_LEFT) }}
+                                   </button>
                                @endif
+
+                               {{-- Next --}}
+                               @if ($files->hasMorePages())
+                                   <button onclick="window.location.href='{{ $files->nextPageUrl() }}'">
+                                       <i class="fal fa-angle-double-right"></i>
+                                   </button>
+                               @else
+                                   <button disabled>
+                                       <i class="fal fa-angle-double-right"></i>
+                                   </button>
+                               @endif
+
                            </div>
                        </div>
                    </div>
