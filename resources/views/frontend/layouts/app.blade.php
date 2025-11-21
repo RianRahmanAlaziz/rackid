@@ -155,7 +155,7 @@
     <script defer src="{{ asset('/assets/js/main.js') }}"></script>
 
 
-    <script>
+    {{-- <script>
         const searchBox = document.getElementById("search-box");
         const searchInput = document.getElementById("search-input");
         const searchButton = document.getElementById("search-button");
@@ -191,6 +191,70 @@
                     window.location.href = `/produk?search=${encodeURIComponent(keyword)}`;
                 }
             }
+        });
+    </script> --}}
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const searchBox = document.getElementById("search-box");
+            const searchInput = document.getElementById("search-input");
+            const searchButton = document.getElementById("search-button");
+            const closeSearch = document.getElementById("close");
+            const overlay = document.getElementById("anywhere-home");
+
+            // fungsi redirect berdasar tag
+            function goSearch() {
+                const keyword = searchInput.value.trim();
+                if (!keyword) return;
+
+                let baseURL = '/produk?search='; // default
+
+                // cek tag #brosur
+                if (keyword.toLowerCase().startsWith('brosur')) {
+                    baseURL = '/brosur?search=';
+                }
+
+                // cek tag #datasheet
+                else if (keyword.toLowerCase().startsWith('datasheet')) {
+                    baseURL = '/datasheet?search=';
+                }
+
+                window.location.href = `${baseURL}${encodeURIComponent(keyword)}`;
+            }
+
+            // buka search
+            document.querySelectorAll(".open-search").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    searchBox.classList.add("active");
+                    searchInput.focus();
+                });
+            });
+
+            // tutup
+            if (closeSearch) {
+                closeSearch.addEventListener("click", () => searchBox.classList.remove("active"));
+            }
+
+            if (overlay) {
+                overlay.addEventListener("click", () => searchBox.classList.remove("active"));
+            }
+
+            // klik tombol search
+            if (searchButton) {
+                searchButton.addEventListener("click", goSearch);
+            }
+
+            // enter untuk search
+            if (searchInput) {
+                searchInput.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter") {
+                        e.preventDefault();
+                        goSearch();
+                    }
+                });
+            }
+
         });
     </script>
 
