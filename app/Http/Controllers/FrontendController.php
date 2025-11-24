@@ -154,29 +154,19 @@ class FrontendController extends Controller
 
     public function datasheet(Request $request)
     {
-        // Query dasar kategori datasheet
         $query = Dokument::where('category', 'datasheet');
 
-        // Jika ada request pencarian
-        if ($request->has('search') && $request->search != '') {
+        if ($request->has('search')) {
             $search = $request->input('search');
-
-            $query->where(function ($q) use ($search) {
-                $q->where('nfile', 'like', "%{$search}%")
-                    ->orWhere('file', 'like', "%{$search}%");
-            });
+            $query->where('nfile', 'like', "%{$search}%");
         }
-
-        // Pagination + tetap membawa query search pada halaman selanjutnya
-        $files = $query->paginate(6)->withQueryString();
-
+        $file = $query->paginate(6);
         return view('frontend.datasheet.datasheet', [
             'title' => 'Datasheet',
             'categories' => Category::all(),
-            'files' => $files
+            'files' =>  $file
         ]);
     }
-
 
     public function media_foto(Request $request)
     {
