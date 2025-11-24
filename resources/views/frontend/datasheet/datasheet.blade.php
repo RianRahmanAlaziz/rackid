@@ -30,6 +30,20 @@
                <img src="assets/images/about/shape/bg_05.png" alt="shape" class="three">
            </div>
        </div>
+
+       <!-- Search Area -->
+       <div class="container mb-4">
+           <form action="{{ route('datasheet') }}" method="GET">
+               <div class="input-group">
+                   <input type="text" name="search" class="form-control" placeholder="Cari datasheet..."
+                       value="{{ request('search') }}">
+                   <button class="btn btn-primary" type="submit">
+                       <i class="fas fa-search me-1"></i> Cari
+                   </button>
+               </div>
+           </form>
+       </div>
+
        <!-- rts document download area start -->
        <div class="rts-document-area rts-section-gapBottom mt-dec-section-inner with-pricing">
            <div class="container">
@@ -43,18 +57,19 @@
                                </div>
                                <h4 class="doc-title">Datasheet {{ $item->nfile }}</h4>
                                <p class="doc-desc">Spesifikasi teknis lengkap untuk produk RackID.</p>
-                               <a href="/assets/document/{{ $item->file }}" class="rts-btn btn-primary mt-3"
-                                   download>Unduh
-                                   PDF</a>
+                               <a href="/assets/document/{{ $item->file }}" class="rts-btn btn-primary mt-3" download>
+                                   Unduh PDF
+                               </a>
                            </div>
                        </div>
                    @empty
                        <div class="col-12 text-center my-5">
-                           <p class="text-muted">Belum ada Dokument yang tersedia.</p>
+                           <p class="text-muted">Belum ada Dokumen yang tersedia.</p>
                        </div>
                    @endforelse
                </div>
            </div>
+
            <!-- pagination area -->
            @if ($files->hasPages())
                <div class="row">
@@ -124,5 +139,6 @@
                </div>
            @endif
        </div>
+
        <!-- rts document download area end -->
    @endsection
