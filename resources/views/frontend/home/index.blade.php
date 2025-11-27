@@ -3,6 +3,30 @@
     <div class="banner-swiper-two">
         <div class="swiper mySwiper-banner-two">
             <div class="swiper-wrapper">
+
+                @foreach ($banners as $banner)
+                    <div class="swiper-slide">
+                        <div class="banner-slide">
+
+                            <!-- GAMBAR DESKTOP -->
+                            <img src="{{ asset('assets/images/banner/' . $banner->gambar_desktop) }}"
+                                alt="{{ $banner->title }}" class="banner-main-img d-none d-md-block">
+
+                            <!-- GAMBAR MOBILE -->
+                            <img src="{{ asset('assets/images/banner/' . $banner->gambar_mobile) }}"
+                                alt="{{ $banner->title }}" class="banner-main-img d-block d-md-none">
+
+                        </div>
+                    </div>
+                @endforeach
+
+            </div>
+        </div>
+    </div>
+
+    {{-- <div class="banner-swiper-two">
+        <div class="swiper mySwiper-banner-two">
+            <div class="swiper-wrapper">
                 <!-- SLIDE 1 -->
                 <div class="swiper-slide">
                     <div class="banner-slide">
@@ -25,7 +49,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 
     <!-- rts service area start -->
     <div class="rts-service-area rts-section-gap">

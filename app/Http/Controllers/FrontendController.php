@@ -6,17 +6,32 @@ use App\Models\Category;
 use App\Models\Dokument;
 use App\Models\Gallery;
 use App\Models\Product;
+use App\Models\Banner;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
+
+
+
     public function home()
     {
         return view('frontend.home.index', [
-            'title' => 'Home',
-            'categories' => Category::all()
+            'title'      => 'Home',
+            'categories' => Category::all(),
+            'banners'    => Banner::where('status', 'Active')
+                ->orderBy('order', 'asc')
+                ->get()
         ]);
     }
+
+    // public function home()
+    // {
+    //     return view('frontend.home.index', [
+    //         'title' => 'Home',
+    //         'categories' => Category::all()
+    //     ]);
+    // }
 
     public function aboutus()
     {
