@@ -194,6 +194,29 @@
         });
     </script>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const btnToggle = document.getElementById("btnFilterToggle");
+            const sidebar = document.getElementById("filterSidebar");
+
+            // overlay
+            const overlay = document.createElement("div");
+            overlay.classList.add("filter-overlay");
+            document.body.appendChild(overlay);
+
+            btnToggle.addEventListener("click", function() {
+                sidebar.classList.toggle("active");
+                overlay.classList.toggle("show");
+            });
+
+            overlay.addEventListener("click", function() {
+                sidebar.classList.remove("active");
+                overlay.classList.remove("show");
+            });
+        });
+    </script>
+
+
 
 </body>
 

@@ -111,7 +111,6 @@
                                     <img src="{{ asset('/assets/images/icons/01.svg') }}" alt="Menu icon"
                                         class="menu-icon">
                                 </button>
-
                             </div>
                         </div>
                     </div>

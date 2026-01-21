@@ -35,17 +35,17 @@
 
                 <!-- Sidebar Filter Modern -->
                 <div class="col-lg-3 col-md-4">
-                    <div class="product-filter-modern shadow-sm rounded-4 p-3">
+                    <div id="filterSidebar" class="product-filter-modern shadow-sm rounded-4 p-3">
 
                         <!-- Search Box -->
                         <div class="search-box-modern mb-3">
                             <form action="{{ url()->current() }}" method="get">
-                                <input type="text" class="form-control" id="searchInput" name="search"
+                                <input type="text" class="form-control" name="search"
                                     placeholder="Cari produk atau kategori..."
                                     value="{{ old('search', request('search')) }}">
                             </form>
-
                         </div>
+
                         <!-- Accordion -->
                         <div class="accordion-modern" id="productAccordion">
                             @foreach ($categories as $parent)
@@ -70,6 +70,7 @@
 
                     </div>
                 </div>
+
                 <!-- Product List -->
                 <div class="col-lg-9 col-md-8">
                     <div class="row g-5">
