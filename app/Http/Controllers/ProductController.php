@@ -49,17 +49,23 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'productname'   => 'required',
-            'slug'          => 'nullable|unique:products',
-            'category_id'   => 'nullable',
+            'productname'   => 'nullable|string',
+            'slug'          => 'nullable|unique:products,slug',
+            'category_id'   => 'nullable|integer',
+
             'gambar'        => 'nullable|array',
-            'gambar.*'      => 'image|mimes:jpg,jpeg,png,gif|max:2048',
+            'gambar.*'      => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+
             'thumbnail'     => 'nullable|array',
-            'thumbnail.*'   => 'image|mimes:jpg,jpeg,png,gif|max:2048',
-            'url.*'         => 'sometimes|nullable|url',
+            'thumbnail.*'   => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
+
+            'url'           => 'nullable|array',
+            'url.*'         => 'nullable|url',
+
             'productid'     => 'nullable|unique:products,productid',
             'description'   => 'nullable|string',
         ]);
+
         $status = $request->has('status') ? 'Active' : 'Inactive';
         $validatedData['status'] = $status;
 
