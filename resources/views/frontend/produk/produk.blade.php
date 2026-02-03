@@ -75,26 +75,24 @@
                 <div class="col-lg-9 col-md-8">
                     <div class="row g-5">
                         @forelse ($products as $product)
-                            <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
+                            <div class="col-lg-4 col-md-6 col-sm-12">
                                 <div class="rts-single-shop-area">
+
                                     @php
-                                        $gambarArray = $product->gambar ? json_decode($product->gambar, true) : [];
-                                        $thumbnail = !empty($gambarArray) ? $gambarArray[0] : 'default-product.png';
-                                        $slug = $product->slug ?? '#';
+                                        $gambarArray = json_decode($product->gambar, true) ?? [];
+                                        $gambarUtama = $gambarArray[0] ?? 'default-product.png';
                                     @endphp
 
                                     <a href="{{ $product->slug ? url('/produk/' . $product->slug) : '#' }}"
                                         class="thumbnail">
-                                        <img src="{{ asset('/assets/images/product/' . $thumbnail) }}"
+                                        <img src="{{ asset('/assets/images/product/' . $gambarUtama) }}"
                                             alt="{{ $product->productname ?? 'Produk' }}">
                                     </a>
 
                                     <div class="inner-content">
-                                        <a href="{{ $product->slug ? url('/produk/' . $product->slug) : '#' }}">
-                                            <h4 class="title">
-                                                {{ $product->productname ?? 'Nama Produk Belum Tersedia' }}
-                                            </h4>
-                                        </a>
+                                        <h4 class="title">
+                                            {{ $product->productname ?? 'Nama Produk Belum Tersedia' }}
+                                        </h4>
                                     </div>
                                 </div>
                             </div>
