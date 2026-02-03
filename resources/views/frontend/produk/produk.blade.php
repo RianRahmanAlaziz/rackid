@@ -18,9 +18,9 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="title-area-left center">
-                        <h2 class="title">
+                        <h1 class="title">
                             Daftar Produk Kami
-                        </h2>
+                        </h1>
                     </div>
                 </div>
             </div>
