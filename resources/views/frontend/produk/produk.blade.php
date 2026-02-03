@@ -78,15 +78,19 @@
                             <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
                                 <div class="rts-single-shop-area">
                                     @php
-                                        $gambarArray = json_decode($product->gambar, true);
+                                        $gambarArray = json_decode($product->gambar, true) ?? [];
+                                        $gambarUtama = $gambarArray[0] ?? 'default-product.png';
                                     @endphp
-                                    <a href="/produk/{{ $product->slug }}" class="thumbnail">
-                                        <img src="{{ asset('/assets/images/product/' . $gambarArray[0]) }}"
-                                            alt="{{ $product->productname }}">
+
+                                    <a href="{{ $product->slug ? url('/produk/' . $product->slug) : '#' }}"
+                                        class="thumbnail">
+                                        <img src="{{ asset('/assets/images/product/' . $gambarUtama) }}"
+                                            alt="{{ $product->productname ?? 'Produk' }}">
                                     </a>
+
                                     <div class="inner-content">
-                                        <a href="/produk/{{ $product->slug }}">
-                                            <h4 class="title">{{ $product->productname }}</h4>
+                                        <a href="{{ $product->slug ? url('/produk/' . $product->slug) : '#' }}">
+                                            <h4 class="title">{{ $product->productname ?? '-' }}</h4>
                                         </a>
                                     </div>
                                 </div>
@@ -96,6 +100,7 @@
                                 <p class="text-muted">Belum ada Product yang tersedia.</p>
                             </div>
                         @endforelse
+
                     </div> <!-- end product row -->
                 </div>
             </div>
