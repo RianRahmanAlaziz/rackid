@@ -75,24 +75,19 @@
                 <div class="col-lg-9 col-md-8">
                     <div class="row g-5">
                         @forelse ($products as $product)
-                            <div class="col-lg-4 col-md-6 col-sm-12">
+                            <div class="col-lg-4 col-md-6 col-sm-12" data-animation="fadeInUp" data-delay="0.2">
                                 <div class="rts-single-shop-area">
-
                                     @php
-                                        $gambarArray = json_decode($product->gambar, true) ?? [];
-                                        $gambarUtama = $gambarArray[0] ?? 'default-product.png';
+                                        $gambarArray = json_decode($product->gambar, true);
                                     @endphp
-
-                                    <a href="{{ $product->slug ? url('/produk/' . $product->slug) : '#' }}"
-                                        class="thumbnail">
-                                        <img src="{{ asset('/assets/images/product/' . $gambarUtama) }}"
-                                            alt="{{ $product->productname ?? 'Produk' }}">
+                                    <a href="/produk/{{ $product->slug }}" class="thumbnail">
+                                        <img src="{{ asset('/assets/images/product/' . $gambarArray[0]) }}"
+                                            alt="{{ $product->productname }}">
                                     </a>
-
                                     <div class="inner-content">
-                                        <h4 class="title">
-                                            {{ $product->productname ?? 'Nama Produk Belum Tersedia' }}
-                                        </h4>
+                                        <a href="/produk/{{ $product->slug }}">
+                                            <h4 class="title">{{ $product->productname }}</h4>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
