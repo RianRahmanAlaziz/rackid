@@ -66,7 +66,7 @@ class FrontendController extends Controller
         }
 
         // ⬇️ Tambahkan ini agar produk muncul berdasarkan update terbaru
-        $query->orderBy('updated_at', 'desc');
+        $query->orderBy('updated_at', 'asc');
 
         $products = $query->paginate(6);
 
