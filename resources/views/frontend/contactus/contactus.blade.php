@@ -46,8 +46,9 @@
                         <div class="single-contact-info">
                             <div class="info-wrapper">
                                 <span>Bergabung Bersama Kami</span>
-                                <a href="mailto:customercare@rack.id">
-                                    <h5 style="color: #fff; font-size:15px;">customercare@rack.id</h5>
+                                <a href="https://mail.google.com/mail/?view=cm&to=customercare@rack.id" target="_blank"
+                                    style="color:#fff; font-size:15px; text-decoration:none;">
+                                    customercare@rack.id
                                 </a>
                             </div>
                         </div>
