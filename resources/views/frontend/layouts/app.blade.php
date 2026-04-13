@@ -57,7 +57,7 @@
         gtag('js', new Date());
         gtag('config', 'G-1JJESJM8Z5');
     </script>
-    <script>
+    {{-- <script>
         // 🚫 Nonaktifkan Klik Kanan
         document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -86,7 +86,7 @@
                     "<h3 style='text-align:center;margin-top:20%;font-family:sans-serif;'>🚫 Developer Tools tidak diperbolehkan.</h3>";
             }
         }, 1000);
-    </script>
+    </script> --}}
 </head>
 
 
