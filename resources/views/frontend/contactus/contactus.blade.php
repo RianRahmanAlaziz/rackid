@@ -62,6 +62,17 @@
                                 </a>
                             </div>
                         </div>
+                        <div class="single-contact-info">
+                            <div class="info-wrapper">
+                                <span>Showroom Kami</span>
+                                <a href="#">
+                                    <h5 style="color: #fff; font-size:15px;">
+                                        Ruko Mangga Dua Square, Jl. Gn. Sahari No.1 Blok F1-F2, RT.12/RW.6, Ancol, Kota, Jkt
+                                        Utara, Daerah Khusus Ibukota Jakarta 14420
+                                    </h5>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-lg-5">
