@@ -57,8 +57,6 @@
         gtag('js', new Date());
         gtag('config', 'G-1JJESJM8Z5');
     </script>
-    ljjbiuviboijpok[pl][;\]
-    --}}
 </head>
 
 
