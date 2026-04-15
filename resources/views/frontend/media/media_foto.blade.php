@@ -58,31 +58,23 @@
         <!-- pagination area -->
         @if ($image->hasPages())
             <div class="row">
-                <div class="col-12">
-                    <div class="text-center">
-                        <div class="pagination">
-                            {{-- Tombol halaman --}}
-                            @for ($i = 1; $i <= $image->lastPage(); $i++)
-                                @if ($i == $image->currentPage())
-                                    <button class="active">
-                                        {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                                    </button>
-                                @else
-                                    <button onclick="window.location.href='{{ $image->url($i) }}'">
-                                        {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
-                                    </button>
-                                @endif
-                            @endfor
+                <div class="col-12 text-center">
+                    <div class="pagination">
 
-                            {{-- Tombol next --}}
-                            @if ($image->hasMorePages())
-                                <a href="{{ $image->nextPageUrl() }}">
-                                    <button><i class="fal fa-angle-double-right"></i></button>
-                                </a>
-                            @else
-                                <button disabled><i class="fal fa-angle-double-right"></i></button>
-                            @endif
-                        </div>
+                        {{-- Nomor halaman --}}
+                        @for ($i = 1; $i <= $image->lastPage(); $i++)
+                            <button onclick="window.location.href='{{ $image->url($i) }}'"
+                                class="{{ $i == $image->currentPage() ? 'active' : '' }}">
+                                {{ str_pad($i, 2, '0', STR_PAD_LEFT) }}
+                            </button>
+                        @endfor
+
+                        {{-- Next --}}
+                        <button onclick="window.location.href='{{ $image->nextPageUrl() }}'"
+                            {{ !$image->hasMorePages() ? 'disabled' : '' }}>
+                            <i class="fal fa-angle-double-right"></i>
+                        </button>
+
                     </div>
                 </div>
             </div>

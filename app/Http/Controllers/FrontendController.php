@@ -189,7 +189,7 @@ class FrontendController extends Controller
             $query->where('ngambar', 'like', "%{$search}%");
         }
 
-        $image = $query->paginate(1);
+        $image = $query->paginate(9);
         return view('frontend.media.media_foto', [
             'title' => 'Media Foto',
             'image' => $image,
