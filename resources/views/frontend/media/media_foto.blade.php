@@ -33,16 +33,20 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="gallery-area-main-wrapper-4">
-                        <div class="row g-5">
+                        <div class="row g-4">
+
                             @forelse ($image as $item)
-                                <div class="col-md-4">
+                                <div class="col-md-4 col-sm-6">
                                     <div class="single-gallery">
                                         <a href="/assets/images/gallery/{{ $item->gambar }}"
                                             class="thumbnail gallery-image">
-                                            <img src="/assets/images/gallery/{{ $item->gambar }}"
-                                                alt="{{ $item->ngambar }}">
-                                        </a>
 
+                                            <div class="img-wrapper">
+                                                <img src="/assets/images/gallery/{{ $item->gambar }}"
+                                                    alt="{{ $item->ngambar }}">
+                                            </div>
+
+                                        </a>
                                     </div>
                                 </div>
                             @empty
@@ -50,14 +54,16 @@
                                     <p class="text-muted">Belum ada gambar yang tersedia.</p>
                                 </div>
                             @endforelse
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- pagination area -->
+
+        {{-- PAGINATION --}}
         @if ($image->hasPages())
-            <div class="row">
+            <div class="row mt-4">
                 <div class="col-12 text-center">
                     <div class="pagination">
 
