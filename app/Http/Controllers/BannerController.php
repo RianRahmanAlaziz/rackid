@@ -19,8 +19,6 @@ class BannerController extends Controller
         if ($request->filled('search')) {
             $query->where('title', 'like', '%' . $request->search . '%');
         }
-        $query->orderBy('order', 'asc');
-
         // Urutkan berdasarkan order ASC, lalu created_at DESC
         $banners = $query->orderBy('order', 'asc')
             ->orderBy('created_at', 'desc')
@@ -40,8 +38,7 @@ class BannerController extends Controller
     public function create()
     {
         return view('dashboard.banner.add', [
-            'title'  => 'Add Banner',
-            'banner' => Banner::all()
+            'title'  => 'Add Banner'
         ]);
     }
 
@@ -57,12 +54,12 @@ class BannerController extends Controller
             'order'         => 'nullable|integer|min:0',
         ]);
 
-        $validatedData['status'] = $request->has('status') ? 'Active' : 'Inactive';
+        $validatedData['status'] = $request->input('status', 'Inactive');
         $validatedData['order']  = $request->input('order', 0);
 
-        $videoFolder = public_path('assets/images/banner');
-        if (!File::exists($videoFolder)) {
-            File::makeDirectory($videoFolder, 0777, true);
+        $imageFolder = public_path('assets/images/banner');
+        if (!File::exists($imageFolder)) {
+            File::makeDirectory($imageFolder, 0777, true);
         }
 
         DB::beginTransaction();
@@ -70,14 +67,14 @@ class BannerController extends Controller
             if ($request->hasFile('gambar_desktop')) {
                 $file = $request->file('gambar_desktop');
                 $fileName = 'desktop-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move($videoFolder, $fileName);
+                $file->move($imageFolder, $fileName);
                 $validatedData['gambar_desktop'] = $fileName;
             }
 
             if ($request->hasFile('gambar_mobile')) {
                 $file = $request->file('gambar_mobile');
                 $fileName = 'mobile-' . uniqid() . '.' . $file->getClientOriginalExtension();
-                $file->move($videoFolder, $fileName);
+                $file->move($imageFolder, $fileName);
                 $validatedData['gambar_mobile'] = $fileName;
             }
 
@@ -126,6 +123,10 @@ class BannerController extends Controller
             'gambar_mobile'  => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
             'order'         => 'nullable|integer|min:0',
         ]);
+
+        $validatedData['status'] = $request->input('status', 'Inactive');
+        $validatedData['order']  = $request->input('order', 0);
+
         try {
             if ($request->hasFile('gambar_desktop')) {
                 // Hapus gambar_desktop lama jika ada
@@ -161,8 +162,14 @@ class BannerController extends Controller
     {
         $banner = Banner::findOrFail($id);
         try {
+            if ($banner->gambar_desktop && File::exists(public_path('assets/images/banner/' . $banner->gambar_desktop))) {
+                File::delete(public_path('assets/images/banner/' . $banner->gambar_desktop));
+            }
+            if ($banner->gambar_mobile && File::exists(public_path('assets/images/banner/' . $banner->gambar_mobile))) {
+                File::delete(public_path('assets/images/banner/' . $banner->gambar_mobile));
+            }
+            
             Banner::destroy($banner->id);
-            File::delete('assets/images/banner/' . $banner->gambar);
             return redirect('/dashboard/banner')->with('success', 'Berhasil di Hapus');
         } catch (\Exception $e) {
             return redirect('/dashboard/banner')->with('error', 'Gagal Menghapus. Silakan Coba Lagi.');

@@ -254,16 +254,15 @@
         // Fungsi untuk menghapus pratinjau
         function removePreviewDekstop() {
             const previewContainer0 = document.getElementById("preview-container0");
-            previewContainer0.innerHTML = ""; // Hapus pratinjau gambar
+            previewContainer0.innerHTML = ""; 
 
-            // Menghapus elemen input file dan menambahkannya kembali
-            const fileInput = document.getElementById("file");
-            fileInput.value = ""; // Jika id input file adalah "file"
-            const newFileInput = fileInput.cloneNode(true);
-            fileInput.parentNode.replaceChild(newFileInput, fileInput);
-
-            // Tambahkan event listener ke elemen baru
-            newFileInput.addEventListener("change", previewImage);
+            const fileInput = document.getElementById("gambar_desktop");
+            if (fileInput) {
+                fileInput.value = ""; 
+                const newFileInput = fileInput.cloneNode(true);
+                fileInput.parentNode.replaceChild(newFileInput, fileInput);
+                newFileInput.addEventListener("change", previewImageDekstop);
+            }
         }
 
         // Fungsi untuk menampilkan pratinjau gambar yang diunggah
@@ -298,16 +297,15 @@
         // Fungsi untuk menghapus pratinjau
         function removePreviewMobile() {
             const previewContainer1 = document.getElementById("preview-container1");
-            previewContainer1.innerHTML = ""; // Hapus pratinjau gambar
+            previewContainer1.innerHTML = ""; 
 
-            // Menghapus elemen input file dan menambahkannya kembali
-            const fileInput = document.getElementById("file");
-            fileInput.value = ""; // Jika id input file adalah "file"
-            const newFileInput = fileInput.cloneNode(true);
-            fileInput.parentNode.replaceChild(newFileInput, fileInput);
-
-            // Tambahkan event listener ke elemen baru
-            newFileInput.addEventListener("change", previewImage);
+            const fileInput = document.getElementById("gambar_mobile");
+            if (fileInput) {
+                fileInput.value = ""; 
+                const newFileInput = fileInput.cloneNode(true);
+                fileInput.parentNode.replaceChild(newFileInput, fileInput);
+                newFileInput.addEventListener("change", previewImageMobile);
+            }
         }
     </script>
 @endpush

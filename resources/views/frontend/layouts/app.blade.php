@@ -9,7 +9,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="{{ asset('/assets/images/icon.png') }}">
 
     <!-- Title -->
-    <title>@yield('title', 'Rack.ID | PT. Inti Kreasi Network - Ahli Rack Server Indonesia')</title>
+    <title>@yield('title', 'Rack Server Indonesia Terbaik | Close Rack, Wallmount & Aksesoris - Rack.ID')</title>
     <meta name="description" content="@yield('meta_description', 'Rack.ID oleh PT. Inti Kreasi Network menyediakan Close Rack, Wallmount Rack,Wallmount Folding, Open Wallmount, dan Aksesoris Rak profesional di Indonesia.')">
     <!-- ✅ Tambahan SEO -->
     <meta name="keywords" content="@yield('meta_keywords', 'rack server, rack.id, rack network, close rack, wallmount rack, wallmount folding, open wallmount, aksesoris rak, PT Inti Kreasi Network, server rack Indonesia')">

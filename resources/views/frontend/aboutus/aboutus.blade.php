@@ -23,9 +23,9 @@
             </div>
         </div>
         <div class="shape-area">
-            <img src="assets/images/about/shape/bg_about1.png" alt="shape" class="one">
-            <img src="assets/images/about/shape/bg_about02.png " alt="shape" class="two">
-            <img src="assets/images/about/shape/bg_05.png" alt="shape" class="three">
+            <img src="{{ asset('assets/images/about/shape/bg_about1.png') }}" alt="shape" class="one">
+            <img src="{{ asset('assets/images/about/shape/bg_about02.png') }}" alt="shape" class="two">
+            <img src="{{ asset('assets/images/about/shape/bg_05.png') }}" alt="shape" class="three">
         </div>
     </div>
     <!-- about us area wrapper main end -->
@@ -35,7 +35,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="large-image-bottm-breadcrumb">
-                        <img src="assets/images/about/tentang_kita.png" alt="about">
+                        <img src="{{ asset('assets/images/about/tentang_kita.png') }}" alt="about">
                     </div>
                 </div>
             </div>
@@ -48,9 +48,9 @@
             <div class="row align-items-center">
                 <div class="col-lg-6">
                     <div class="left-thumbnail-about-area-two">
-                        <img src="assets/images/about/tentang_kita01.png" alt="about">
+                        <img src="{{ asset('assets/images/about/tentang_kita01.png') }}" alt="about">
                         <div class="small-image">
-                            <img src="assets/images/about/tentang_kita02.png" alt="small">
+                            <img src="{{ asset('assets/images/about/tentang_kita02.png') }}" alt="small">
                         </div>
                     </div>
                 </div>
@@ -75,8 +75,8 @@
             </div>
         </div>
         <div class="shape-area">
-            <img src="assets/images/about/shape/bg_about1.png" alt="shape" class="one">
-            <img src="assets/images/about/shape/bg_about02.png" alt="shape" class="two">
+            <img src="{{ asset('assets/images/about/shape/bg_about1.png') }}" alt="shape" class="one">
+            <img src="{{ asset('assets/images/about/shape/bg_about02.png') }}" alt="shape" class="two">
         </div>
     </div>
     <!-- rts about area end -->
@@ -108,15 +108,15 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="left-thumbnail-about-area-two">
-                        <img src="assets/images/about/tentang_kita03.png" alt="about">
+                        <img src="{{ asset('assets/images/about/tentang_kita03.png') }}" alt="about">
                     </div>
                 </div>
 
             </div>
         </div>
         <div class="shape-area">
-            <img src="assets/images/about/shape/bg_about02.png" alt="shape" class="one">
-            <img src="assets/images/about/shape/bg_about1.png" alt="shape" class="two">
+            <img src="{{ asset('assets/images/about/shape/bg_about02.png') }}" alt="shape" class="one">
+            <img src="{{ asset('assets/images/about/shape/bg_about1.png') }}" alt="shape" class="two">
         </div>
     </div>
 @endsection
