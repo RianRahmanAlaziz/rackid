@@ -38,7 +38,7 @@
                             <div class="info-wrapper">
                                 <span>Hubungi Kami</span>
                                 <a href="#">
-                                    <h5 style="color: #fff; font-size:15px;">+62 821 1224 8872</h5>
+                                    <h5 style="color: #fff; font-size:15px;">+62 8138809547</h5>
                                 </a>
                                 <a href="#"></a>
                             </div>
