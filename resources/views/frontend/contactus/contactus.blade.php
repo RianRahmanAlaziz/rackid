@@ -92,10 +92,9 @@
                 <div class="col-lg-12">
                     <div class="google-map">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7926.273434874888!2d106.7575434!3d-6.1373772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1d96234940ed%3A0xc12e287872ca01de!2sRackID%20—%20Solusi%20Rak%20Server%20%26%20Infrastruktur%20IT!5e0!3m2!1sen!2sid!4v1741757435755!5m2!1sen!2sid"
-                            width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d589.6878305485493!2d106.83150086702027!3d-6.139963320333757!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e6a1f468e6b8a29%3A0x26bf7ec5e1f4acf0!2sRACK.ID%20NETWORK%20CABINET%20MANGGA%20DUA%20SQUARE%20%7CRack%20Server%2C%20Close%20Rack%2C%20Wallmount%20Rack%2C%20Accessories%20%7C%20PT.%20INTI%20KREASI%20NETWORK!5e0!3m2!1sen!2sid!4v1778640339496!5m2!1sen!2sid"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
                     </div>
                 </div>
